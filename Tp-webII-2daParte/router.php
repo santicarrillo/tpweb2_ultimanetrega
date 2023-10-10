@@ -3,7 +3,7 @@ require_once './app/controllers/piloto.controller.php';
 require_once './app/controllers/escuderia.controller.php';
 require_once './app/controllers/about.controller.php';
 require_once './app/controllers/auth.controller.php';
-
+require_once './app/controllers/pilotosByescuderia.controller.php';
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 $action = 'listar'; // accion por defecto
@@ -66,6 +66,9 @@ switch ($params[0]) {
         $controller = new AuthController();
         $controller->logout();
         break;
+        case 'pilotosbyescuderia':
+            $controller = new PilotosByEscuderiacontroller ();
+            $controller -> showPilotosByEscuderia();
     default: 
         echo "404 Page Not Found";
         break;
