@@ -2,6 +2,7 @@
 require_once './app/controllers/piloto.controller.php';
 require_once './app/controllers/escuderia.controller.php';
 require_once './app/controllers/about.controller.php';
+require_once './app/controllers/auth.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -15,6 +16,7 @@ if (!empty( $_GET['action'])) {
 // eliminar/:ID  ->     taskController->removeTask($id); 
 // finalizar/:ID  ->    taskController->finishTask($id);
 // about ->             aboutController->showAbout();
+/// login ->            auth.controller--> showlogin();
 
 // parsea la accion para separar accion real de parametros
 $params = explode('/', $action);
@@ -36,9 +38,22 @@ switch ($params[0]) {
         $controller = new AboutController();
         $controller->showAbout();
         break;
-    case 'escuderiaList':
-        $escuderiaController = new EscuderiasController();
-        $escuderiaController->showEscuderias();
+    case 'escuderia':
+        $controller = new EscuderiasController();
+        $controller->showFormula1();
+        break;
+    case 'escuderia':
+        $controller = new EscuderiasController();
+        $controller->showEscuderias($id);
+        break;
+    case 'agregar':
+        $controller = new EscuderiasController();
+        $controller->addEscuderia();
+        break;
+    case 'eliminar':
+        $controller = new EscuderiasController();
+        $controller->removeEscuderia($params[1]);
+            break;
     case 'login':
         $controller = new AuthController();
         $controller->showLogin(); 

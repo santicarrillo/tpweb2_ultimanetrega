@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-09 03:48:05
+/* Smarty version 4.2.1, created on 2023-10-10 22:13:48
   from 'C:\xampp\htdocs\web2\Tp-webII-2daParte\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65235bd51374e4_57882901',
+  'unifunc' => 'content_6525b07c978cd4_35319511',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '711b8122c01e2d475b64d097d86dcd157f536b8e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\templates\\header.tpl',
-      1 => 1696800288,
+      1 => 1696968550,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65235bd51374e4_57882901 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6525b07c978cd4_35319511 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -51,13 +51,16 @@ function content_65235bd51374e4_57882901 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="escuderiaList">Escuderias</a>
+                            <a class="nav-link" aria-current="page" href="escuderia">Escuderias</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="about">Calendario 2023</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="formusuario">Login</a>
+                            <a class="nav-link" aria-current="page" href="pilotosByescuderia">Pilotos por Escuderias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="login">Login</a>
                         </li>
                     </ul>
                 </div>

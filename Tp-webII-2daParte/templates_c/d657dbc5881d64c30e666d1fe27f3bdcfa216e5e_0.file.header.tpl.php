@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-08 23:29:27
+/* Smarty version 4.2.1, created on 2023-10-09 05:27:37
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65231f37607822_36466075',
+  'unifunc' => 'content_65237329632f26_01689106',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd657dbc5881d64c30e666d1fe27f3bdcfa216e5e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\header.tpl',
-      1 => 1696800288,
+      1 => 1696822049,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65231f37607822_36466075 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65237329632f26_01689106 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -51,10 +51,13 @@ function content_65231f37607822_36466075 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="escuderiaList">Escuderias</a>
+                            <a class="nav-link" aria-current="page" href="escuderia">Escuderias</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="about">Calendario 2023</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="pilotosByescuderia">Pilotos por Escuderias</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="formusuario">Login</a>

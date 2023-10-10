@@ -25,13 +25,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="escuderiaList">Escuderias</a>
+                            <a class="nav-link" aria-current="page" href="escuderia">Escuderias</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="about">Calendario 2023</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="formusuario">Login</a>
+                            <a class="nav-link" aria-current="page" href="pilotosByescuderia">Pilotos por Escuderias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="login">Login</a>
                         </li>
                     </ul>
                 </div>

@@ -8,6 +8,16 @@ class EscuderiasModel {
         $this->db = new PDO('mysql:host=localhost;'.'dbname=formula1;charset=utf8', 'root', '');
     }
 
+    function getAllFormula1() {
+        $query = $this->db->prepare('SELECT * FROM escuderias');
+        $query->execute();
+
+        // $tasks es un arreglo de tareas
+        $formula1 = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $formula1;
+    }
+
     public function getAllEscuderias() {
         $query = $this->db->prepare("SELECT * FROM escuderias");
         $query->execute();
@@ -27,17 +37,31 @@ class EscuderiasModel {
 
         return $escuderias;
     }
-    
-    function addEscuderia() {
 
-        $equipos = $_POST['equipos'];
-        $pilotos = $_POST['pilotos'];
-        $puntos_equipo = $_POST['puntos_equipo'];
-        $pos_equipos = $_POST['pos_equipos'];
+    function insertEscuderia($equipos, $pilotos, $puntos_equipo, $pos_equipos) {
+        $query = $this->db->prepare('INSERT INTO escuderias (equipos, pilotos, puntos_equipo, pos_equipos) VALUES(?,?,?,?)');
+        $query->execute([$equipos, $pilotos, $puntos_equipo, $pos_equipos]);
+
+        return $this->db->lastInsertId();
+    }
+
+    function deleteEscuderiaById($id) {
+        $query = $this->db->prepare('DELETE FROM escuderias WHERE id = ?');
+        $query->execute([$id]);
+    }
+
+    function updateEscuderia($id, $equipos, $pilotos, $puntos_equipo, $pos_equipos) {    
+        $query = $this->db->prepare('UPDATE escuderias SET equipos=?, $pilotos=?, puntos_equipo=?, pos_equipos=? WHERE id = ?');
+        $query->execute([$id, $equipos, $pilotos, $puntos_equipo, $pos_equipos]);
+    }
 
 
-        $this->model->insertEscuderia($equipos, $pilotos, $puntos_equipo, $pos_equipos);
-        header("Location: " . BASE_URL); 
+    public function editEscuderia($id, $equipos, $pilotos, $puntos_equipo, $pos_equipos) {
+        $editarpilotos = $this->db->prepare("UPDATE escuderias SET equipos = ?, pilotos = ?, puntos_equipo = ?, pos_equipo = ? WHERE id=?");
+       
+        $editarpilotos->execute([$equipos, $pilotos, $puntos_equipo, $pos_equipos, $id]); //nombre-de-la-columna = valor[, nombre-de-la-columna=valor]
+       
+        return $editarpilotos;
     }
 }
 

@@ -68,7 +68,7 @@ class PilotoController {
             $puntos = $_POST['puntos'];
 
         $this->model->updatePiloto($id, $nombre, $campeonato, $puntos);
-        header("Location: " . BASE_URL . 'list');
+        header("Location: " . BASE_URL . 'pilotosList');
         }
     }
     function editPilotos($id) {
@@ -82,7 +82,7 @@ class PilotoController {
         $piloto = $this->model->getAllPilotos();
         
         $this->view->printEdit($editarpiloto, $piloto);
-        header("Location: " . BASE_URL . 'list');
+        header("Location: " . BASE_URL . 'pilotosList');
         
     }
 

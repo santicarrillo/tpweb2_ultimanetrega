@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-
+{include file="form_altaEscuderia.tpl"}
 
 <table class="table table-striped">
     <thead>
@@ -8,6 +8,8 @@
         <th>Pilotos</th>
         <th>Puntos Por Equipo</th>
         <th>Posicion del Equipo en el Campeonato</th>
+        <th>Editar</th>
+        <th>Borrar</th>
         
     </thead>     
 
@@ -19,6 +21,8 @@
                 <td>{$escuderias->pilotos|truncate:35}</td> 
                 <td>{$escuderias->puntos_equipo|truncate:35}</td>
                 <td>{$escuderias->pos_equipos|truncate:35}</td>
+                <td><a href='form/{$escuderias->id}' type='button' class='btn btn-info'>Editar</a></td>
+                <td><a href='delete/{$escuderias->id}' type='button' class='btn btn-danger'>Borrar</a></td>
                 
             </span> 
         </td>
