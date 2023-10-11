@@ -25,7 +25,7 @@
             <span> 
                 <td>{$calendario->fecha|truncate:25}</td> 
                 <td>{$calendario->circuito|truncate:40}</td> 
-                <td>{$calendario->podio|truncate:40}</td>          
+                <td>{$calendario->podio|truncate:55}</td>          
             </span> 
         </td>
         </tr>

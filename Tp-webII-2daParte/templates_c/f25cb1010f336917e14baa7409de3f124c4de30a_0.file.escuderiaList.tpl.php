@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-09 05:27:38
+/* Smarty version 4.2.1, created on 2023-10-10 20:03:26
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\escuderiaList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6523732a63d226_72301121',
+  'unifunc' => 'content_652591ee366357_61837020',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f25cb1010f336917e14baa7409de3f124c4de30a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\escuderiaList.tpl',
-      1 => 1696821939,
+      1 => 1696961003,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6523732a63d226_72301121 (Smarty_Internal_Template $_smarty_tpl) {
+function content_652591ee366357_61837020 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\Tp-webII-2daParte\\libs\\smarty-4.2.1\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:form_altaEscuderia.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

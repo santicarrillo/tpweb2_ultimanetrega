@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-11 09:10:51
-  from 'C:\xampp\htdocs\web2\Tp-webII-2daParte\templates\form_altaEscuderia.tpl' */
+/* Smarty version 4.2.1, created on 2023-10-10 21:14:31
+  from 'D:\xampp\htdocs\Tp-webII-2daParte\templates\form_altaEscuderia.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65264a7baed894_11486933',
+  'unifunc' => 'content_6525a297e35370_27078593',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '589c7589c2de2796ed4cafdcc7fec75aec970c2e' => 
+    '732a6d9cf03965e82443754b5cb1de122564e643' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\templates\\form_altaEscuderia.tpl',
+      0 => 'D:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\form_altaEscuderia.tpl',
       1 => 1696819623,
       2 => 'file',
     ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65264a7baed894_11486933 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6525a297e35370_27078593 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- formulario de alta de tarea -->
 <main class="container mt-5">
      <div class="col">

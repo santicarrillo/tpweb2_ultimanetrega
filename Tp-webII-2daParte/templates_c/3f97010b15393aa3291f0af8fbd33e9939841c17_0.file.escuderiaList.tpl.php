@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-11 09:10:51
-  from 'C:\xampp\htdocs\web2\Tp-webII-2daParte\templates\escuderiaList.tpl' */
+/* Smarty version 4.2.1, created on 2023-10-11 01:32:55
+  from 'D:\xampp\htdocs\Tp-webII-2daParte\templates\escuderiaList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65264a7ba15043_81520813',
+  'unifunc' => 'content_6525df2729e7d3_14141535',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ef5da99c37d8d9aaa66112ce2cd92f5c8d5edab3' => 
+    '3f97010b15393aa3291f0af8fbd33e9939841c17' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\templates\\escuderiaList.tpl',
+      0 => 'D:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\escuderiaList.tpl',
       1 => 1696980772,
       2 => 'file',
     ),
@@ -23,8 +23,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_65264a7ba15043_81520813 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\libs\\smarty-4.2.1\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
+function content_6525df2729e7d3_14141535 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\xampp\\htdocs\\Tp-webII-2daParte\\libs\\smarty-4.2.1\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:form_altaEscuderia.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

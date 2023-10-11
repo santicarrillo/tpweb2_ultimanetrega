@@ -8,8 +8,7 @@
         <th>Nombre de los Pilotos</th>
         <th>Posicion en el Campeonato de Pilotos</th>
         <th>Puntos en el Campeonato de Pilotos</th>
-        <th>Editar</th>
-        <th>Borrar</th>
+        
         
     </thead> 
     

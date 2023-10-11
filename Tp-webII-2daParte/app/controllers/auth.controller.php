@@ -1,7 +1,7 @@
 <?php
 require_once './app/views/auth.view.php';
 require_once './app/models/user.model.php';
-require_once    './app/helper/auth.helper.php';
+
 class AuthController {
     private $view;
     private $model;
@@ -12,33 +12,33 @@ class AuthController {
     }
 
     public function showLogin() {
-        $this->view->showLogin();
+        $this->view->showFormLogin();
     }
 
-    public function auth() {
+    public function validateUser() {
+       
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        if (empty($email) || empty($password)) {
-            $this->view->showLogin('Faltan completar datos');
-            return;
-        }
-
-        // busco el usuario
-        $user = $this->model->getByEmail($email);
+        $user = $this->model->getUserByEmail($email);
+        
+        
         if ($user && password_verify($password, $user->password)) {
-            // ACA LO AUTENTIQUE
-            
-            AuthHelper::login($user);
-            
-            header('Location: ' . BASE_URL);
+
+            session_start();
+            $_SESSION['USER_ID'] = $user->id;
+            $_SESSION['USER_EMAIL'] = $user->email;
+            $_SESSION['IS_LOGGED'] = true;
+
+            header("Location: " . BASE_URL);
         } else {
-            $this->view->showLogin('Usuario inválido');
-        }
+           $this->view->showFormLogin("El usuario o la contraseña no existe.");
+        } 
     }
 
     public function logout() {
-        AuthHelper::logout();
-        header('Location: ' . BASE_URL);    
+        session_start();
+        session_destroy();
+        header("Location: " . BASE_URL);
     }
 }

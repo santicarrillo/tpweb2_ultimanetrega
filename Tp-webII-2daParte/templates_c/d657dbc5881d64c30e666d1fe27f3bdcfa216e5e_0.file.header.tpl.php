@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-09 05:27:37
+/* Smarty version 4.2.1, created on 2023-10-10 20:23:38
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65237329632f26_01689106',
+  'unifunc' => 'content_652596aa0245d2_04355696',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd657dbc5881d64c30e666d1fe27f3bdcfa216e5e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\header.tpl',
-      1 => 1696822049,
+      1 => 1696962215,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65237329632f26_01689106 (Smarty_Internal_Template $_smarty_tpl) {
+function content_652596aa0245d2_04355696 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -44,20 +44,17 @@ function content_65237329632f26_01689106 (Smarty_Internal_Template $_smarty_tpl)
     <header>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="">Formula 1 - Inicio</a>
+                <a class="navbar-brand" href="">Formula 1 - Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="escuderia">Escuderias</a>
+                            <a class="nav-link" aria-current="page" href="escuderia">Pilotos por Escuderias</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="about">Calendario 2023</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="pilotosByescuderia">Pilotos por Escuderias</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="formusuario">Login</a>

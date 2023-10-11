@@ -25,6 +25,11 @@ class PilotoView {
     function showPiloto(){
         header("Location: ".BASE_URL."pilotos");
     }
+
+    function showAll($pilotos){
+        $this->smarty->assign("pilotos", $pilotos);
+        $this->smarty->display('pilotobyescuderia.tpl');
+    }
     
 
     function printEdit($editarpiloto, $piloto){
@@ -35,35 +40,5 @@ class PilotoView {
         $this->smarty->display('pilotosList.tpl');
     }
 
-    
-    public function showError($error) {
-        require 'templates/header.php';
-        
-        echo "
-            <div class='alert alert-danger' role='alert'>
-                $error
-            </div> 
-        ";
-        require 'templates/footer.php';
-    }
 
-    }
-
- 
-/*<ul class="list-group">
-<?php foreach($pilotos as $piloto) { ?>
-    <li class="list-group-item item-task" >
-        <div>
-            <b><?php echo $piloto->nombre ?></b> | Posicion del Campeonato: <?php echo $piloto->campeonato ?> | Puntos: <?php echo $piloto->puntos ?>
-        </div>
-        <div class="actions">
-            <a href="editar/<?php echo $piloto->id ?>" type="button" class='btn btn-danger ml-auto'>Editar</a>
-            <a href="eliminar/<?php echo $piloto->id ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
-        </div>
-    </li>
-<?php } ?>
-</ul>
-
-    <?php
-    require 'templates/footer.php';
-*/
+}

@@ -1,6 +1,7 @@
 <?php
 require_once './app/models/piloto.model.php';
 require_once './app/views/piloto.view.php';
+require_once './app/models/escuderia.model.php';
 
 class PilotoController {
     private $model;
@@ -12,18 +13,13 @@ class PilotoController {
         
     }
 
-    //se llama a la base de datos
     public function showFormula1(){
         $formula1 = $this->model->getAllFormula1();
         $this->view->showFormula1($formula1);
     }
 
-    //se llama a la tabla pilotos de la base de datos
     public function showPilotos($id) {
-        // obtengo tareas del controlador
         $pilotos = $this->model->getPilotos($id);
-        
-        // muestro a los pilotos desde la vista
         $this->view->showPilotos($pilotos);
     }
 
@@ -33,15 +29,20 @@ class PilotoController {
         
     }
 
-    //metodo de agregar pilotos
-    public function addPiloto() {
 
-        // obtengo los datos del usuario
+    function showAll(){
+        $pilotos = $this->model->getAll();
+
+        $this->view->showAll($pilotos);
+    }
+    
+    
+
+    public function addPiloto() {
         $nombre = $_POST['nombre'];
         $campeonato = $_POST['campeonato'];
         $puntos = $_POST['puntos'];
 
-        // validaciones
         if (empty($nombre) || empty($campeonato) || empty($puntos)) {
             $this->view->showError("Debe completar todos los campos");
             return;
@@ -55,12 +56,15 @@ class PilotoController {
         }
     }
 
-    //se llama al metodo para remover o eliminar a los pilotos mediante el id
+
+
     function removePiloto($id) {
         $this->model->deletePilotoById($id);
         header('Location: ' . BASE_URL);
     }
     
+
+
     function editar($id){
         if((isset($_POST))&&(!empty($_POST))){
             $nombre = $_POST['nombre'];
@@ -72,8 +76,6 @@ class PilotoController {
         }
     }
     function editPilotos($id) {
-        //validar entrada de datos
-        
         $nombre = $_POST['nombre'];
         $campeonato = $_POST['campeonato']; 
         $puntos = $_POST['puntos'];
