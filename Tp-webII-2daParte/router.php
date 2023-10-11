@@ -13,7 +13,7 @@ if (!empty( $_GET['action'])) {
 
 // listar    ->         taskController->showTasks();
 // agregar   ->         taskController->addTask();
-// eliminar/:ID  ->     taskController->removeTask($id); 
+
 // finalizar/:ID  ->    taskController->finishTask($id);
 // about ->             aboutController->showAbout();
 //login->                showlogin();

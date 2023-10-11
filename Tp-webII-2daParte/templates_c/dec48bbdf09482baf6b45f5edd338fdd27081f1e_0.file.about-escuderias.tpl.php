@@ -40,7 +40,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 </h6>
             <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['escuderias']->value->pos_equipos;?>
 </p>
-            <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['escuderias']->value->description;?>
+<p class="card-text"><?php echo $_smarty_tpl->tpl_vars['escuderias']->value->description;?>
 </p>
             <a class="btn btn-primary mt-2" href="<?php echo BASE_URL;?>
 ">Volver</a>
