@@ -39,6 +39,11 @@ class PilotoView {
 
         $this->smarty->display('pilotosList.tpl');
     }
+    function showError($msg, $url=null){
+        $this->smarty->assign("msj", $msg);
+        $this->smarty->assign("url", $url);
+        $this->smarty->assign("error.tpl");
+    }
 
 
 }
