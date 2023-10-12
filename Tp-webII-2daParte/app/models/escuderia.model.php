@@ -46,13 +46,9 @@ class EscuderiasModel {
         return $escuderias;
     }
 
-    function insertEscuderia($equipos, $pilotos, $img = null, $description, $puntos_equipo, $pos_equipos) {
-        $pathImg = null;
-        if ($img){
-            $pathImg = $this->uploadImg($img);
-        }
-        $query = $this->db->prepare('INSERT INTO escuderias (equipos, pilotos, descripcion, puntos_equipo, pos_equipos) VALUES(?,?,?,?,?)');
-        $query->execute([$equipos, $pilotos, $description, $puntos_equipo, $pos_equipos, $pathImg]);
+    function insertEscuderia($equipos, $pilotos, $description, $puntos_equipo, $pos_equipos) {
+        $query = $this->db->prepare('INSERT INTO escuderias (equipos, pilotos, description, puntos_equipo, pos_equipos) VALUES(?,?,?,?,?)');
+        $query->execute([$equipos, $pilotos, $description, $puntos_equipo, $pos_equipos]);
 
         return $this->db->lastInsertId();
     }

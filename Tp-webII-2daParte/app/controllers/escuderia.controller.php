@@ -39,22 +39,21 @@ class EscuderiasController {
 
     public function addEscuderia() {
 
-        $equipos = $_POST['equipos'];
-        $pilotos = $_POST['pilotos'];
-        $description = $_POST['description'];
-        $puntos_equipo = $_POST['puntos_equipo'];
-        $pos_equipos = $_POST['pos_equipos'];
-
-        if (empty($equipos) || empty($pilotos) || empty($puntos_equipo) || empty($pos_equipos)) 
+        if((isset($_POST['equipos'])&&isset($_POST['pilotos'])&&isset($_POST['description'])&&isset($_POST['puntos_equipo'])&&isset($_POST['pos_equipos']))
+            &&(!empty($_POST['equipos'])&&!empty($_POST['pilotos'])&&!empty($_POST['description'])&&!empty($_POST['puntos_equipo'])&&!empty($_POST['pos_equipos']))){
+            
+            $equipos = $_POST['equipos'];
+            $puntos_equipo = $_POST['puntos_equipo'];
+            $description = $_POST['description'];
+            $pilotos = $_POST['pilotos'];
+            $pos_equipos = $_POST['pos_equipos'];
         
-
-        if (($_FILES['img']['type'] == "image/jpg" || $_FILES['img']['type'] == "image/jpeg" || $_FILES['img']['type'] == "image/png")){
-
-            $id = $this->model->insertEscuderia($equipos, $pilotos, $_FILES['img']['tmp_name'], $description, $puntos_equipo, $pos_equipos);
+            $id = $this->model->insertEscuderia($equipos, $pilotos, $description, $puntos_equipo, $pos_equipos);
+            $this->view->success(true);
         } else {
-            $id = $this->model->insertEscuderia($equipos, $pilotos, $img = null, $description, $puntos_equipo, $pos_equipos);
+            $this->view->success(false,"Faltan datos obligatorios");
         }
-        
+
         header("Location: " . BASE_URL . 'escuderias');
     }
 

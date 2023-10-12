@@ -1,4 +1,27 @@
-<!-- formulario de alta de tarea -->
+<?php
+/* Smarty version 4.2.1, created on 2023-10-13 01:03:39
+  from 'C:\xampp\htdocs\web2\tp-web2_repository\Tp-webII-2daParte\templates\form_altaEscuderia.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.2.1',
+  'unifunc' => 'content_65287b4b339d56_02438773',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '0cde7180a7defc05d7b247f8eaa3d23d75e91f84' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\web2\\tp-web2_repository\\Tp-webII-2daParte\\templates\\form_altaEscuderia.tpl',
+      1 => 1697151542,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_65287b4b339d56_02438773 (Smarty_Internal_Template $_smarty_tpl) {
+?><!-- formulario de alta de tarea -->
 <main class="container mt-5">
      <div class="col">
             <!--<div class="center" style="width: 80rem" style="height: 10rem">
@@ -55,4 +78,5 @@
     </div>
 
     <button type="submit" class="btn btn-primary mt-2">Guardar</button>
-</form>
+</form><?php }
+}
