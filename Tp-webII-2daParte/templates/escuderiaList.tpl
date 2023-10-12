@@ -17,8 +17,8 @@
 
         {foreach from=$formula1 item=$escuderias}
     <tr>
-    
-    <td><a class="btn btn-success" href="escuderias/{$escuderias->id}">Ver mas<a></td>
+    <td><a class="btn btn-success" href="equipos/{$escuderias->id}">Ver mas<a></td>
+        <td>{$escuderias->equipos}</td> 
         <td> 
             <span> 
                 

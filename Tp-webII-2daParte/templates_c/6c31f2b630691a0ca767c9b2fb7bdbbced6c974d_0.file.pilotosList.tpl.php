@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-12 23:16:16
+/* Smarty version 4.2.1, created on 2023-10-13 00:06:03
   from 'C:\xampp\htdocs\web2\Tp-webII-2daParte\templates\pilotosList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65286220b50217_62576304',
+  'unifunc' => 'content_65286dcb4124c4_68314428',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6c31f2b630691a0ca767c9b2fb7bdbbced6c974d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\templates\\pilotosList.tpl',
-      1 => 1697145063,
+      1 => 1697148358,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_65286220b50217_62576304 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65286dcb4124c4_68314428 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\libs\\smarty-4.2.1\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:form_alta.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -58,7 +58,7 @@ $_smarty_tpl->tpl_vars['pilotos']->do_else = false;
 </td>
                 <td><a href='editPilotosform/<?php echo $_smarty_tpl->tpl_vars['pilotos']->value->id;?>
 ' type='button' class='btn btn-info'>Editar</a></td>
-                <td><a href='delete/<?php echo $_smarty_tpl->tpl_vars['pilotos']->value->id;?>
+                <td><a href='eliminarpilotos/<?php echo $_smarty_tpl->tpl_vars['pilotos']->value->id;?>
 ' type='button' class='btn btn-danger'>Borrar</a></td>           
             </span> 
         </td>

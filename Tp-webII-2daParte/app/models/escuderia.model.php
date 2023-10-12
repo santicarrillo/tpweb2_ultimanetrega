@@ -38,6 +38,14 @@ class EscuderiasModel {
         return $escuderias;
     }
 
+    function getEscuderia($id){
+        $query = $this->db->prepare('SELECT * FROM escuderias WHERE id = ?');
+        $query->execute([$id]);
+        $escuderias = $query->fetch(PDO::FETCH_OBJ);
+        
+        return $escuderias;
+    }
+
     function insertEscuderia($equipos, $pilotos, $img = null, $description, $puntos_equipo, $pos_equipos) {
         $pathImg = null;
         if ($img){

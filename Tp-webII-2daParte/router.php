@@ -14,7 +14,8 @@ if (!empty( $_GET['action'])) {
 $params = explode('/', $action);
 
 switch ($params[0]) {
-    case 'listar':
+    
+    case 'listar':// apartados de pilotos
         $pilotocontroller = new PilotoController();
         $pilotocontroller->showFormula1();
         break;
@@ -22,7 +23,7 @@ switch ($params[0]) {
         $pilotocontroller = new PilotoController();
         $pilotocontroller->addPiloto();
         break;
-    case 'eliminar':
+    case 'eliminarpilotos':
         $pilotocontroller = new PilotoController();
         $pilotocontroller->removePiloto($params[1]);
         break;
@@ -40,11 +41,13 @@ switch ($params[0]) {
         $pilotocontroller = new PilotoController();
         $pilotocontroller->showAll();
         break;
-    case 'about':
+
+    case 'about':// about
         $pilotocontroller = new AboutController();
         $pilotocontroller->showAbout();
         break;
-    case 'escuderia':
+
+    case 'escuderia':// este es el apartado de escuderiascontroler
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->showFormula1();
         break;
@@ -56,7 +59,7 @@ switch ($params[0]) {
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->showEscuderias($id);
         break;
-    case 'escuderias':
+    case 'equipos':
         $id = $params[1];
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->showMore($id);
@@ -69,7 +72,8 @@ switch ($params[0]) {
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->removeEscuderia($params[1]);
             break;
-    case 'login':
+
+    case 'login':// regitro,ingreso, validacion y salida del usuario 
         $controller = new AuthController();
         $controller->showLogin(); 
         break;

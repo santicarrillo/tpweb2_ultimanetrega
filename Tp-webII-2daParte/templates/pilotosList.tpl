@@ -21,7 +21,7 @@
                 <td>{$pilotos->campeonato|truncate:25}</td> 
                 <td>{$pilotos->puntos|truncate:25}</td>
                 <td><a href='editPilotosform/{$pilotos->id}' type='button' class='btn btn-info'>Editar</a></td>
-                <td><a href='delete/{$pilotos->id}' type='button' class='btn btn-danger'>Borrar</a></td>           
+                <td><a href='eliminarpilotos/{$pilotos->id}' type='button' class='btn btn-danger'>Borrar</a></td>           
             </span> 
         </td>
         </tr>

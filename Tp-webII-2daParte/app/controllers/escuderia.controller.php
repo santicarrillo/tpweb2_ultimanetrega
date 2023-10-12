@@ -5,10 +5,13 @@ require_once './app/models/escuderia.model.php';
 class EscuderiasController {
     private $model;
     private $view;
+    private $modelPilotos;
+
 
     public function __construct() {
         $this->model = new EscuderiasModel();
         $this->view = new EscuderiasView();
+        $this->modelPilotos = new PilotoModel();
     } 
 
     public function showFormula1(){
@@ -29,7 +32,9 @@ class EscuderiasController {
 
     function showMore($id){
         $escuderias = $this->model->getMore($id);
-        $this->view->showMore($escuderias);
+        $pilotos = $this->modelPilotos->getPilotos($escuderias->id);
+
+        $this->view->showMore($escuderias,$pilotos);
     }
 
     public function addEscuderia() {
