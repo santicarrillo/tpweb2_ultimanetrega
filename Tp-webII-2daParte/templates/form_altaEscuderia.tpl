@@ -1,5 +1,10 @@
+<!-- formulario de alta de tarea -->
 <main class="container mt-5">
-     <div class="col"></div>
+     <div class="col">
+            <!--<div class="center" style="width: 80rem" style="height: 10rem">
+                <img class="card-img-top" src="images/10.png">        
+            </div>-->
+        </div>
     </main>
 
 
@@ -35,16 +40,11 @@
         <label>Pilotos</label>
         <input required name="pilotos" type="text" class="form-control">
     </div>
-
-    <div class="form-group">
-        <label>Descripcion</label>
-        <input required name="description" type="text" class="form-control">
-    </div>
     
     <div class="form-group">
         <label>Posicion del Equipo en el Campeonato</label>
         <input required name="pos_equipos" type="text" class="form-control">
     </div>
 
-    <button type="submit" class="btn btn-primary mt-2">Agregar</button>
+    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
 </form>

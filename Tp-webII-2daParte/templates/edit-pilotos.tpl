@@ -23,7 +23,7 @@
             <input name="puntos" class="form-control" rows="3" maxlength="200" required value="{$pilotos->puntos}"></input>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <button type="submit" class="btn btn-primary mt-2">Editar producto</button>
+            <button type="submit" class="btn btn-primary mt-2">Editar piloto</button>
         </div>
     </form>
 </div>

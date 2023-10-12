@@ -36,6 +36,14 @@ class PilotoView {
         $this->smarty->assign("escuderias", $escuderias);
         $this->smarty->display('edit-pilotos.tpl');
     }
+
+    function success($success, $msg = null){
+        $this->smarty->assign("success", $success);
+        if (!empty($msg)) {
+            $this->smarty->assign("msg", $msg);
+        }
+        $this->smarty->display('success.tpl');
+    }
     
     
 

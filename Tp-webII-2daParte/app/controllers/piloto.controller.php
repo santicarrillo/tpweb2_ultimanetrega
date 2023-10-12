@@ -44,7 +44,7 @@ class PilotoController {
         $puntos = $_POST['puntos'];
 
         $this->model->insertPiloto($nombre, $campeonato, $puntos);
-        header('Location: ' . BASE_URL);
+        header('Location: ' . BASE_URL );
         
     }
 
@@ -69,8 +69,11 @@ class PilotoController {
             $id_escuderia = $_POST['id_escuderia'];
 
             $this->model->editById($nombre, $campeonato, $puntos, $id_escuderia, $id);
-            $this->view->showPilotos();
-        }   
+            $this->view->success(true);
+        }else {
+            $this->view->success(false, "Faltan datos obligatorios");
+            die();
+        }
     }
     
     

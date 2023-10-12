@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-12 19:48:53
-  from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\edit-pilotos.tpl' */
+/* Smarty version 4.2.1, created on 2023-10-12 23:24:34
+  from 'C:\xampp\htdocs\web2\Tp-webII-2daParte\templates\edit-pilotos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65283185c83457_79732854',
+  'unifunc' => 'content_65286412e158b7_80146827',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '71e6041976b413d8a117a4c765d0bc7bba4740eb' => 
+    '0da592c38fb6bc84fd0a583089a2c7464c82e913' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\edit-pilotos.tpl',
-      1 => 1697132924,
+      0 => 'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\templates\\edit-pilotos.tpl',
+      1 => 1697143724,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_65283185c83457_79732854 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65286412e158b7_80146827 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
