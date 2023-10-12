@@ -59,7 +59,7 @@ switch ($params[0]) {
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->addEscuderia();
         break;
-    case 'eliminar':
+    case 'delete':
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->removeEscuderia($params[1]);
             break;
