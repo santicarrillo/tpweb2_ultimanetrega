@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-09 04:47:06
+/* Smarty version 4.2.1, created on 2023-10-11 22:05:54
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\form_altaEscuderia.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_652369aa738e52_97630573',
+  'unifunc' => 'content_65270022bd5452_67756098',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cabb4ba512d998956ee61a8de524a6a08b15ee7c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\form_altaEscuderia.tpl',
-      1 => 1696819623,
+      1 => 1697054688,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_652369aa738e52_97630573 (Smarty_Internal_Template $_smarty_tpl) {
-?><!-- formulario de alta de tarea -->
-<main class="container mt-5">
-     <div class="col">
-            <!--<div class="center" style="width: 80rem" style="height: 10rem">
-                <img class="card-img-top" src="images/10.png">        
-            </div>-->
-        </div>
+function content_65270022bd5452_67756098 (Smarty_Internal_Template $_smarty_tpl) {
+?><main class="container mt-5">
+     <div class="col"></div>
     </main>
 
 
@@ -63,12 +58,17 @@ function content_652369aa738e52_97630573 (Smarty_Internal_Template $_smarty_tpl)
         <label>Pilotos</label>
         <input required name="pilotos" type="text" class="form-control">
     </div>
+
+    <div class="form-group">
+        <label>Descripcion</label>
+        <input required name="description" type="text" class="form-control">
+    </div>
     
     <div class="form-group">
         <label>Posicion del Equipo en el Campeonato</label>
         <input required name="pos_equipos" type="text" class="form-control">
     </div>
 
-    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+    <button type="submit" class="btn btn-primary mt-2">Agregar</button>
 </form><?php }
 }

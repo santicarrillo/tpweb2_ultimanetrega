@@ -34,29 +34,23 @@ class EscuderiasController {
 
     public function addEscuderia() {
 
-        // obtengo los datos del usuario
         $equipos = $_POST['equipos'];
         $pilotos = $_POST['pilotos'];
+        $description = $_POST['description'];
         $puntos_equipo = $_POST['puntos_equipo'];
         $pos_equipos = $_POST['pos_equipos'];
 
-        // validaciones
-        if (empty($equipos) || empty($pilotos) || empty($puntos_equipo) || empty($pos_equipos)) {
-            $this->view->showError("Debe completar todos los campos");
-            return;
-        }
+        if (empty($equipos) || empty($pilotos) || empty($puntos_equipo) || empty($pos_equipos)) 
+        
 
         if (($_FILES['img']['type'] == "image/jpg" || $_FILES['img']['type'] == "image/jpeg" || $_FILES['img']['type'] == "image/png")){
-            $id = $this->model->insertEscuderia($equipos, $pilotos, $_FILES['img']['tmp_name'], $puntos_equipo, $pos_equipos);
+
+            $id = $this->model->insertEscuderia($equipos, $pilotos, $_FILES['img']['tmp_name'], $description, $puntos_equipo, $pos_equipos);
         } else {
-            $id = $this->model->insertEscuderia($equipos, $pilotos, $puntos_equipo, $pos_equipos);
+            $id = $this->model->insertEscuderia($equipos, $pilotos, $img = null, $description, $puntos_equipo, $pos_equipos);
         }
         
-        if ($id) {
-            header('Location: ' . BASE_URL);
-        } else {
-            $this->view->showError("Error al insertar la tarea");
-        }
+        header("Location: " . BASE_URL . 'escuderias');
     }
 
     function removeEscuderia($id) {

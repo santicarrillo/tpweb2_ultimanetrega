@@ -7,6 +7,7 @@
         <th></th> 
         <th>Equipos</th>
         <th>Pilotos</th>
+        <th>Descripcion</th>
         <th>Puntos Por Equipo</th>
         <th>Posicion del Equipo en el Campeonato</th>
         <th></th>
@@ -22,7 +23,8 @@
             <span> 
                 
                 <td>{$escuderias->equipos|truncate:35}</td> 
-                <td>{$escuderias->pilotos|truncate:35}</td> 
+                <td>{$escuderias->pilotos|truncate:35}</td>
+                <td>{$escuderias->description|truncate:35}</td> 
                 <td>{$escuderias->puntos_equipo|truncate:35}</td>
                 <td>{$escuderias->pos_equipos|truncate:35}</td>
                 <td><a href='form/{$escuderias->id}' type='button' class='btn btn-info'>Editar</a></td>

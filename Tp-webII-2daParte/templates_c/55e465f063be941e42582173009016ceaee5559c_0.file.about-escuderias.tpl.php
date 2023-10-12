@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-11 09:10:55
-  from 'C:\xampp\htdocs\web2\Tp-webII-2daParte\templates\about-escuderias.tpl' */
+/* Smarty version 4.2.1, created on 2023-10-11 20:24:55
+  from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\about-escuderias.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65264a7f478f21_37383003',
+  'unifunc' => 'content_6526e877a333f0_86039139',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'dec48bbdf09482baf6b45f5edd338fdd27081f1e' => 
+    '55e465f063be941e42582173009016ceaee5559c' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\templates\\about-escuderias.tpl',
-      1 => 1696980341,
+      0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\about-escuderias.tpl',
+      1 => 1697048692,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_65264a7f478f21_37383003 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6526e877a333f0_86039139 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\Tp-webII-2daParte\\libs\\smarty-4.2.1\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -38,9 +39,9 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 </h5> 
             <h6 class="card-subtitle mb-2 text-muted"><?php echo $_smarty_tpl->tpl_vars['escuderias']->value->pilotos;?>
 </h6>
-            <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['escuderias']->value->pos_equipos;?>
+            <p class="card-text">Pocision del Campeonato de Constructores: <?php echo $_smarty_tpl->tpl_vars['escuderias']->value->pos_equipos;?>
 </p>
-<p class="card-text"><?php echo $_smarty_tpl->tpl_vars['escuderias']->value->description;?>
+            <p class="card-text"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['escuderias']->value->description,10000);?>
 </p>
             <a class="btn btn-primary mt-2" href="<?php echo BASE_URL;?>
 ">Volver</a>

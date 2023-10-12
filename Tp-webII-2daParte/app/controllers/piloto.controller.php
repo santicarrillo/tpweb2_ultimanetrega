@@ -43,17 +43,9 @@ class PilotoController {
         $campeonato = $_POST['campeonato'];
         $puntos = $_POST['puntos'];
 
-        if (empty($nombre) || empty($campeonato) || empty($puntos)) {
-            $this->view->showError("Debe completar todos los campos");
-            return;
-        }
-
-        $id = $this->model->insertPiloto($nombre, $campeonato, $puntos);
-        if ($id) {
-            header('Location: ' . BASE_URL);
-        } else {
-            $this->view->showError("Error al insertar la tarea");
-        }
+        $this->model->insertPiloto($nombre, $campeonato, $puntos);
+        header('Location: ' . BASE_URL);
+        
     }
 
 
@@ -72,7 +64,7 @@ class PilotoController {
             $puntos = $_POST['puntos'];
 
         $this->model->updatePiloto($id, $nombre, $campeonato, $puntos);
-        header("Location: " . BASE_URL . 'pilotosList');
+        header("Location: " . BASE_URL . 'edit-pilotos');
         }
     }
     function editPilotos($id) {

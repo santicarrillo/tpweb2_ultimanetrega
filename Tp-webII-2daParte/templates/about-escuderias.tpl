@@ -9,8 +9,8 @@
         <div class="card-body">
             <h5 class="card-title display-6">{$escuderias->equipos}</h5> 
             <h6 class="card-subtitle mb-2 text-muted">{$escuderias->pilotos}</h6>
-            <p class="card-text">{$escuderias->pos_equipos}</p>
-            <p class="card-text">{$escuderias->description}</p>
+            <p class="card-text">Pocision del Campeonato de Constructores: {$escuderias->pos_equipos}</p>
+            <p class="card-text">{$escuderias->description|truncate:10000}</p>
             <a class="btn btn-primary mt-2" href="{BASE_URL}">Volver</a>
         </div>
     </div>

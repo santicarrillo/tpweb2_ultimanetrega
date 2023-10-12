@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-08 22:49:35
+/* Smarty version 4.2.1, created on 2023-10-11 22:10:33
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\pilotosList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_652315dfaca753_97296423',
+  'unifunc' => 'content_65270139b80416_80491500',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aad0fa31a5c34bf58c64964705ecfb12a5c4e5d9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\pilotosList.tpl',
-      1 => 1696798170,
+      1 => 1697055031,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_652315dfaca753_97296423 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65270139b80416_80491500 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\Tp-webII-2daParte\\libs\\smarty-4.2.1\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:form_alta.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -36,8 +36,7 @@ $_smarty_tpl->_subTemplateRender("file:form_alta.tpl", $_smarty_tpl->cache_id, $
         <th>Nombre de los Pilotos</th>
         <th>Posicion en el Campeonato de Pilotos</th>
         <th>Puntos en el Campeonato de Pilotos</th>
-        <th>Editar</th>
-        <th>Borrar</th>
+        
         
     </thead> 
     

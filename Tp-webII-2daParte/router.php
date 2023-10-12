@@ -6,65 +6,62 @@ require_once './app/controllers/auth.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-$action = 'login'; // accion por defecto
+$action = 'listar'; // accion por defecto
 if (!empty( $_GET['action'])) {
     $action = $_GET['action'];
 }
 
-// listar    ->         taskController->showTasks();
-// agregar   ->         taskController->addTask();
-
-// finalizar/:ID  ->    taskController->finishTask($id);
-// about ->             aboutController->showAbout();
-//login->                showlogin();
-// parsea la accion para separar accion real de parametros
 $params = explode('/', $action);
 
 switch ($params[0]) {
     case 'listar':
-        $controller = new PilotoController();
-        $controller->showFormula1();
+        $pilotocontroller = new PilotoController();
+        $pilotocontroller->showFormula1();
         break;
-    case 'agregar':
-        $controller = new PilotoController();
-        $controller->addPiloto();
+    case 'agregarPiloto':
+        $pilotocontroller = new PilotoController();
+        $pilotocontroller->addPiloto();
         break;
     case 'eliminar':
-        $controller = new PilotoController();
-        $controller->removePiloto($params[1]);
+        $pilotocontroller = new PilotoController();
+        $pilotocontroller->removePiloto($params[1]);
         break;
     case 'about':
-        $controller = new AboutController();
-        $controller->showAbout();
+        $pilotocontroller = new AboutController();
+        $pilotocontroller->showAbout();
+        break;
+    case 'form':
+        $pilotocontroller = new PilotoController();
+        $pilotocontroller->editar($params[1]);
         break;
     case 'pilotobyescuderia':
-        $controller = new PilotoController();
-        $controller->showAll();
+        $pilotocontroller = new PilotoController();
+        $pilotocontroller->showAll();
         break;
     case 'escuderia':
-        $controller = new EscuderiasController();
-        $controller->showFormula1();
+        $escuderiacontroller = new EscuderiasController();
+        $escuderiacontroller->showFormula1();
         break;
-    case 'escuderia':
-        $controller = new EscuderiasController();
-        $controller->showEscuderias($id);
+    case 'escuderias':
+        $escuderiacontroller = new EscuderiasController();
+        $escuderiacontroller->showEscuderias($id);
         break;
     case 'pilotobyescuderia':
-        $controller = new EscuderiasController();
-        $controller->showEscuderias();
+        $escuderiacontroller = new EscuderiasController();
+        $escuderiacontroller->showEscuderias($id);
         break;
     case 'escuderias':
         $id = $params[1];
-        $controller = new EscuderiasController();
-        $controller->showMore($id);
+        $escuderiacontroller = new EscuderiasController();
+        $escuderiacontroller->showMore($id);
         break;
     case 'agregar':
-        $controller = new EscuderiasController();
-        $controller->addEscuderia();
+        $escuderiacontroller = new EscuderiasController();
+        $escuderiacontroller->addEscuderia();
         break;
     case 'eliminar':
-        $controller = new EscuderiasController();
-        $controller->removeEscuderia($params[1]);
+        $escuderiacontroller = new EscuderiasController();
+        $escuderiacontroller->removeEscuderia($params[1]);
             break;
     case 'login':
         $controller = new AuthController();
@@ -78,7 +75,6 @@ switch ($params[0]) {
         $controller = new AuthController();
         $controller->logout();
         break;
-    
     default: 
         echo "404 Page Not Found";
         break;

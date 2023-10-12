@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-08 23:20:14
+/* Smarty version 4.2.1, created on 2023-10-11 20:13:08
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\about.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65231d0e142cb8_37240420',
+  'unifunc' => 'content_6526e5b4ece7a9_64047017',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f92950bf4edfed8767e3023db7334b9622f6c624' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\about.tpl',
-      1 => 1696800011,
+      1 => 1696965294,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_65231d0e142cb8_37240420 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6526e5b4ece7a9_64047017 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\Tp-webII-2daParte\\libs\\smarty-4.2.1\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -59,7 +59,7 @@ $_smarty_tpl->tpl_vars['calendario']->do_else = false;
 </td> 
                 <td><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['calendario']->value->circuito,40);?>
 </td> 
-                <td><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['calendario']->value->podio,40);?>
+                <td><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['calendario']->value->podio,55);?>
 </td>          
             </span> 
         </td>

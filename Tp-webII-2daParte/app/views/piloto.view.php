@@ -32,18 +32,15 @@ class PilotoView {
     }
     
 
-    function printEdit($editarpiloto, $piloto){
-        $this->smarty->assign('count', count($piloto));
+    function printEdit($editarpiloto, $pilotos){
+        $this->smarty->assign('count', count($pilotos));
         $this->smarty->assign('editarpiloto', $editarpiloto);
-        $this->smarty->assign('piloto', $piloto);
+        $this->smarty->assign('piloto', $pilotos);
 
-        $this->smarty->display('pilotosList.tpl');
+        $this->smarty->display('edit-pilotos.tpl');
     }
-    function showError($msg, $url=null){
-        $this->smarty->assign("msj", $msg);
-        $this->smarty->assign("url", $url);
-        $this->smarty->assign("error.tpl");
-    }
+    
+    
 
 
 }

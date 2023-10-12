@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-10 20:23:38
+/* Smarty version 4.2.1, created on 2023-10-11 17:29:38
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_652596aa0245d2_04355696',
+  'unifunc' => 'content_6526bf624d1873_41335022',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd657dbc5881d64c30e666d1fe27f3bdcfa216e5e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\header.tpl',
-      1 => 1696962215,
+      1 => 1696983860,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_652596aa0245d2_04355696 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6526bf624d1873_41335022 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -54,10 +54,16 @@ function content_652596aa0245d2_04355696 (Smarty_Internal_Template $_smarty_tpl)
                             <a class="nav-link" aria-current="page" href="escuderia">Pilotos por Escuderias</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="pilotobyescuderia">Pilotos</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="about">Calendario 2023</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="formusuario">Login</a>
+                            <a class="nav-link" aria-current="page" href="login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="logout">Logout</a>
                         </li>
                     </ul>
                 </div>

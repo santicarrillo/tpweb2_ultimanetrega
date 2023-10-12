@@ -52,7 +52,7 @@ class PilotoModel {
 
 
     function deletePilotoById($id) {
-        $query = $this->db->prepare('DELETE FROM pilotos WHERE id = ?');
+        $query = $this->db->prepare('DELETE * FROM pilotos WHERE id = ?');
         $query->execute([$id]);
     }
 
