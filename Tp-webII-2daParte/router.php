@@ -26,17 +26,23 @@ switch ($params[0]) {
         $pilotocontroller = new PilotoController();
         $pilotocontroller->removePiloto($params[1]);
         break;
-    case 'about':
-        $pilotocontroller = new AboutController();
-        $pilotocontroller->showAbout();
-        break;
-    case 'form':
+    case 'editPilotosform':
         $pilotocontroller = new PilotoController();
-        $pilotocontroller->editar($params[1]);
+        $id = $params[1];
+        $pilotocontroller->editView($id);
+        break;
+    case 'editpiloto':
+        $pilotocontroller = new PilotoController();
+        $id = $params[1];
+        $pilotocontroller->edit($id);
         break;
     case 'pilotobyescuderia':
         $pilotocontroller = new PilotoController();
         $pilotocontroller->showAll();
+        break;
+    case 'about':
+        $pilotocontroller = new AboutController();
+        $pilotocontroller->showAbout();
         break;
     case 'escuderia':
         $escuderiacontroller = new EscuderiasController();
@@ -59,7 +65,7 @@ switch ($params[0]) {
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->addEscuderia();
         break;
-    case 'delete':
+    case 'eliminar':
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->removeEscuderia($params[1]);
             break;

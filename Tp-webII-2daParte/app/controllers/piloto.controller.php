@@ -6,10 +6,12 @@ require_once './app/models/escuderia.model.php';
 class PilotoController {
     private $model;
     private $view;
+    private $modelEscuderias;
 
     public function __construct() {
         $this->model = new PilotoModel();
         $this->view = new PilotoView();
+        $this->modelEscuderias = new EscuderiasModel();
         
     }
 
@@ -35,8 +37,6 @@ class PilotoController {
 
         $this->view->showAll($pilotos);
     }
-    
-    
 
     public function addPiloto() {
         $nombre = $_POST['nombre'];
@@ -48,36 +48,31 @@ class PilotoController {
         
     }
 
-
-
     function removePiloto($id) {
         $this->model->deletePilotoById($id);
         header('Location: ' . BASE_URL);
     }
-    
 
+    function editView($id){
+        $escuderias = $this->modelEscuderias->getAllEscuderias();
+        $pilotos = $this->model->getPiloto($id);
+        $this->view->editPiloto($pilotos, $escuderias);
+    }
 
-    function editar($id){
-        if((isset($_POST))&&(!empty($_POST))){
+    function edit($id){
+        if((isset($_POST['nombre']) && isset($_POST['campeonato']) && isset($_POST['puntos']) && isset($_POST['id_escuderia']))
+            && (!empty($_POST['nombre']) && !empty($_POST['campeonato']) && !empty($_POST['puntos']) && !empty($_POST['id_escuderia']))){
+            
             $nombre = $_POST['nombre'];
-            $campeonato = $_POST['campeonato']; 
+            $campeonato = $_POST['campeonato'];
             $puntos = $_POST['puntos'];
+            $id_escuderia = $_POST['id_escuderia'];
 
-        $this->model->updatePiloto($id, $nombre, $campeonato, $puntos);
-        header("Location: " . BASE_URL . 'edit-pilotos');
-        }
+            $this->model->editById($nombre, $campeonato, $puntos, $id_escuderia, $id);
+            $this->view->showPilotos();
+        }   
     }
-    function editPilotos($id) {
-        $nombre = $_POST['nombre'];
-        $campeonato = $_POST['campeonato']; 
-        $puntos = $_POST['puntos'];
-
-        $editarpiloto = $this->model->editPiloto($nombre, $campeonato, $puntos, $id);
-        $piloto = $this->model->getAllPilotos();
-        
-        $this->view->printEdit($editarpiloto, $piloto);
-        header("Location: " . BASE_URL . 'pilotosList');
-        
-    }
+    
+    
 
 }

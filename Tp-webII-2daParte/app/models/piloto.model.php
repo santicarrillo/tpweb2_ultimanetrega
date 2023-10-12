@@ -5,7 +5,6 @@ class PilotoModel {
 
     function __construct() {
         $this->db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME .';charset='.DB_Charset,DB_USER,DB_PASS );
-
     }
 
     function getAllFormula1() {
@@ -14,15 +13,6 @@ class PilotoModel {
         $formula1 = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $formula1;
-    }
-
-    public function getAllPilotos() {
-        $query = $this->db->prepare("SELECT * FROM pilotos");
-        $query->execute();
-        
-        $pilotos = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
-        
-        return $pilotos;
     }
 
 
@@ -68,20 +58,22 @@ class PilotoModel {
     }
 
 
-
-
-    function updatePiloto($id, $nombre, $campeonato, $puntos) {    
-        $query = $this->db->prepare('UPDATE pilotos SET nombre=?, $campeonato=?, puntos=? WHERE id = ?');
-        $query->execute([$id, $nombre, $campeonato, $puntos]);
+    public function getAllPilotos() {
+        $query = $this->db->prepare("SELECT * FROM pilotos");
+        $query->execute();
+        
+        $pilotos = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
+        
+        return $pilotos;
+        
     }
 
-
-
-
-    public function editPiloto($id, $nombre, $campeonato, $puntos) {
-        $editarpilotos = $this->db->prepare("UPDATE escuderias SET equipos = ?, pilotos = ?, puntos_equipo = ?, pos_equipo = ? WHERE id=?");
-        $editarpilotos->execute([$nombre, $campeonato, $puntos, $id]); //nombre-de-la-columna = valor[, nombre-de-la-columna=valor]
-        return $editarpilotos;
+    function editById($nombre, $campeonato, $puntos, $id_escuderia, $id){
+        $query = $this->db->prepare('UPDATE `products` SET nombre = ? , campeonato = ? , puntos = ?, id_escuderia = ? WHERE id = ?');
+        $query->execute([$nombre, $campeonato, $puntos, $id_escuderia, $id]);
     }
+
+    
+
 
 }

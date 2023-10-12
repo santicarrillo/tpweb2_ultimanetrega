@@ -30,13 +30,10 @@ class PilotoView {
         $this->smarty->assign("pilotos", $pilotos);
         $this->smarty->display('pilotobyescuderia.tpl');
     }
-    
 
-    function printEdit($editarpiloto, $pilotos){
-        $this->smarty->assign('count', count($pilotos));
-        $this->smarty->assign('editarpiloto', $editarpiloto);
-        $this->smarty->assign('piloto', $pilotos);
-
+    function editPiloto($pilotos, $escuderias){
+        $this->smarty->assign("pilotos", $pilotos);
+        $this->smarty->assign("escuderias", $escuderias);
         $this->smarty->display('edit-pilotos.tpl');
     }
     
