@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-12 06:00:37
+/* Smarty version 4.2.1, created on 2023-10-13 01:09:18
   from 'C:\xampp\htdocs\web2\Tp-webII-2daParte\templates\form_altaEscuderia.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65276f6544cf09_85302610',
+  'unifunc' => 'content_65287c9e10e868_90474314',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '589c7589c2de2796ed4cafdcc7fec75aec970c2e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\templates\\form_altaEscuderia.tpl',
-      1 => 1697065488,
+      1 => 1697151542,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65276f6544cf09_85302610 (Smarty_Internal_Template $_smarty_tpl) {
-?><main class="container mt-5">
-     <div class="col"></div>
+function content_65287c9e10e868_90474314 (Smarty_Internal_Template $_smarty_tpl) {
+?><!-- formulario de alta de tarea -->
+<main class="container mt-5">
+     <div class="col">
+            <!--<div class="center" style="width: 80rem" style="height: 10rem">
+                <img class="card-img-top" src="images/10.png">        
+            </div>-->
+        </div>
     </main>
 
 
@@ -39,7 +44,21 @@ function content_65276f6544cf09_85302610 (Smarty_Internal_Template $_smarty_tpl)
     <div class="col-3">
         <div class="form-group">
         <label>Puntos por Equipos</label>
-            <select required name="puntos_equipo" class="form-control">
+        <input required name="puntos_equipo" type="text" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+    <label>Pilotos</label>
+    <input required name="pilotos" type="text" class="form-control">
+</div>
+    <div class="form-group">
+        <label>Descripcion</label>
+        <input required name="description" type="text" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label>Posicion del Equipo en el Campeonato</label>
+        <select required name="pos_equipos" class="form-control">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -50,25 +69,14 @@ function content_65276f6544cf09_85302610 (Smarty_Internal_Template $_smarty_tpl)
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
             </select>
-        </div>
     </div>
 
-    <div class="form-group">
-        <label>Pilotos</label>
-        <input required name="pilotos" type="text" class="form-control">
-    </div>
-
-    <div class="form-group">
-        <label>Descripcion</label>
-        <input required name="description" type="text" class="form-control">
-    </div>
-    
-    <div class="form-group">
-        <label>Posicion del Equipo en el Campeonato</label>
-        <input required name="pos_equipos" type="text" class="form-control">
-    </div>
-
-    <button type="submit" class="btn btn-primary mt-2">Agregar</button>
+    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
 </form><?php }
 }

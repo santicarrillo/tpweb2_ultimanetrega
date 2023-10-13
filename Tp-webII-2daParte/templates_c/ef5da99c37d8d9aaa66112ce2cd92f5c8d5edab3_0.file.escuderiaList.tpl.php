@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-12 23:56:55
+/* Smarty version 4.2.1, created on 2023-10-13 01:17:45
   from 'C:\xampp\htdocs\web2\Tp-webII-2daParte\templates\escuderiaList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65286ba7bbe9d0_73681639',
+  'unifunc' => 'content_65287e996b2881_68718296',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef5da99c37d8d9aaa66112ce2cd92f5c8d5edab3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\templates\\escuderiaList.tpl',
-      1 => 1697146861,
+      1 => 1697152659,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_65286ba7bbe9d0_73681639 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65287e996b2881_68718296 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\libs\\smarty-4.2.1\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:form_altaEscuderia.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -69,7 +69,7 @@ $_smarty_tpl->tpl_vars['escuderias']->do_else = false;
 </td>
                 <td><a href='form/<?php echo $_smarty_tpl->tpl_vars['escuderias']->value->id;?>
 ' type='button' class='btn btn-info'>Editar</a></td>
-                <td><a href='delete/<?php echo $_smarty_tpl->tpl_vars['escuderias']->value->id;?>
+                <td><a href='deleteEscuderiaById/<?php echo $_smarty_tpl->tpl_vars['escuderias']->value->id;?>
 ' type='button' class='btn btn-danger'>Borrar</a></td>
                 
             </span> 
