@@ -43,7 +43,7 @@ class PilotoModel {
 
 
     function deletePilotoById($id) {
-        $query = $this->db->prepare('DELETE  FROM pilotos WHERE id = ?');
+        $query = $this->db->prepare('DELETE FROM pilotos WHERE id = ?');
         $query->execute([$id]);
     }
 
@@ -63,14 +63,16 @@ class PilotoModel {
         $query->execute();
         
         $pilotos = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
-        
+        var_dump($query->errorInfo());
         return $pilotos;
         
     }
 
-    function editById($nombre, $campeonato, $puntos, $id_escuderia, $id){
-        $query = $this->db->prepare('UPDATE `products` SET nombre = ? , campeonato = ? , puntos = ?, id_escuderia = ? WHERE id = ?');
-        $query->execute([$nombre, $campeonato, $puntos, $id_escuderia, $id]);
+    function editById($nombre, $campeonato, $puntos, $id){
+        $query = $this->db->prepare('UPDATE `pilotos` SET nombre = ? , campeonato = ? , puntos = ? WHERE id = ?');
+        $query->execute([$nombre, $campeonato, $puntos, $id]);
+
+        
     }
 
     

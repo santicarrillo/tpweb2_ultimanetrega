@@ -44,6 +44,12 @@ class EscuderiasView {
         $this->smarty->display('about-escuderias.tpl');
     }
 
+    function editEscuderia($escuderia){
+        $this->smarty->assign("escuderia", $escuderia);
+        $this->smarty->display('edit-equipos.tpl');
+
+    }
+
     function success($success, $msg = null){
         $this->smarty->assign("success", $success);
         if (!empty($msg)) {

@@ -3,13 +3,13 @@
 
 <table class="table table-striped">
     <thead>
-        <th></th>    
         <th></th> 
+        <th></th>
         <th>Equipos</th>
         <th>Pilotos</th>
         <th>Descripcion</th>
         <th>Puntos Por Equipo</th>
-        <th>Posicion del Equipo en el Campeonato</th>
+        <th>Posicion en el Campeonato</th>
         <th></th>
         <th></th>
         
@@ -18,7 +18,7 @@
         {foreach from=$formula1 item=$escuderias}
     <tr>
     <td><a class="btn btn-success" href="equipos/{$escuderias->id}">Ver mas<a></td>
-        <td>{$escuderias->equipos}</td> 
+         
         <td> 
             <span> 
                 
@@ -27,7 +27,7 @@
                 <td>{$escuderias->description|truncate:35}</td> 
                 <td>{$escuderias->puntos_equipo|truncate:35}</td>
                 <td>{$escuderias->pos_equipos|truncate:35}</td>
-                <td><a href='form/{$escuderias->id}' type='button' class='btn btn-info'>Editar</a></td>
+                <td><a href='editequipoform/{$escuderias->id}' type='button' class='btn btn-info'>Editar</a></td>
                 <td><a href='eliminar/{$escuderias->id}' type='button' class='btn btn-danger'>Borrar</a></td>
                 
             </span> 

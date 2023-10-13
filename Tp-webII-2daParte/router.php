@@ -14,16 +14,15 @@ if (!empty( $_GET['action'])) {
 $params = explode('/', $action);
 
 switch ($params[0]) {
-    
-    case 'listar':// apartados de pilotos
+    case 'listar':
         $pilotocontroller = new PilotoController();
         $pilotocontroller->showFormula1();
         break;
-    case 'agregarPiloto':
+    case 'guardar':
         $pilotocontroller = new PilotoController();
         $pilotocontroller->addPiloto();
         break;
-    case 'eliminarpilotos':
+    case 'eliminarPilotos':
         $pilotocontroller = new PilotoController();
         $pilotocontroller->removePiloto($params[1]);
         break;
@@ -41,13 +40,11 @@ switch ($params[0]) {
         $pilotocontroller = new PilotoController();
         $pilotocontroller->showAll();
         break;
-
-    case 'about':// about
+    case 'about':
         $pilotocontroller = new AboutController();
         $pilotocontroller->showAbout();
         break;
-
-    case 'escuderia':// este es el apartado de escuderiascontroler
+    case 'escuderia':
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->showFormula1();
         break;
@@ -71,9 +68,18 @@ switch ($params[0]) {
     case 'eliminar':
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->removeEscuderia($params[1]);
-            break;
-
-    case 'login':// regitro,ingreso, validacion y salida del usuario 
+        break;
+    case 'editequipoform':
+        $escuderiacontroller = new EscuderiasController();
+        $id = $params[1];
+        $escuderiacontroller->editView($id);
+        break;
+    case 'editEquipo':
+        $escuderiacontroller = new EscuderiasController();
+        $id = $params[1];
+        $escuderiacontroller->edit($id);
+        break;
+    case 'login':
         $controller = new AuthController();
         $controller->showLogin(); 
         break;

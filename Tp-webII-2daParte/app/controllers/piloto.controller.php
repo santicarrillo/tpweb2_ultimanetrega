@@ -39,14 +39,23 @@ class PilotoController {
     }
 
     public function addPiloto() {
-        $nombre = $_POST['nombre'];
-        $campeonato = $_POST['campeonato'];
-        $puntos = $_POST['puntos'];
 
-        $this->model->insertPiloto($nombre, $campeonato, $puntos);
-        header('Location: ' . BASE_URL );
+        if((isset($_POST['nombre'])&&isset($_POST['campeonato'])&&isset($_POST['puntos']))
+            &&(!empty($_POST['nombre'])&&!empty($_POST['campeonato'])&&!empty($_POST['puntos']))){
+
+            $nombre = $_POST['nombre'];
+            $campeonato = $_POST['campeonato'];
+            $puntos = $_POST['puntos'];
+
+            $id = $this->model->insertPiloto($nombre, $campeonato, $puntos);
+            $this->view->success(true);
+            }else {
+                $this->view->success(false,"Faltan datos obligatorios");
+            }
         
-    }
+            header('Location: ' . BASE_URL . 'pilotosList' );
+        
+    } 
 
     function removePiloto($id) {
         $this->model->deletePilotoById($id);
@@ -68,14 +77,12 @@ class PilotoController {
             $puntos = $_POST['puntos'];
             $id_escuderia = $_POST['id_escuderia'];
 
-            $this->model->editById($nombre, $campeonato, $puntos, $id_escuderia, $id);
+            $this->model->editById($nombre, $campeonato, $puntos,$id_escuderia, $id);
             $this->view->success(true);
         }else {
             $this->view->success(false, "Faltan datos obligatorios");
             die();
         }
     }
-    
-    
 
 }
