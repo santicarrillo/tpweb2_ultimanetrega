@@ -59,7 +59,7 @@ class EscuderiasController {
 
     function removeEscuderia($id) {
         $this->model->deleteEscuderiaById($id);
-        header('Location: ' . BASE_URL);
+        header('Location: ' . BASE_URL.'escuderas');
     }
 
 

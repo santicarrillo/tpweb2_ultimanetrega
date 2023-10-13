@@ -7,20 +7,20 @@
             <div class="col-9">
                 <div class="form-group">
                     <label>Piloto</label>
-                    <input name="nombre" type="text" class="form-control" value="{$pilotos->nombre}" required>
+                    <input name="nombre" type="text" class="form-control" required>
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
                     <label>Posicion en el Campeonato de Pilotos</label>
-                    <input name="campeonato" type="text" class="form-control" value="{$pilotos->campeonato}" required>
+                    <input name="campeonato" type="text" class="form-control"  required>
                 </div>
             </div>
         </div>
 
         <div class="form-group">
             <label>Puntos en el Campeonato de Piltos</label>
-            <input name="puntos" class="form-control" rows="3" maxlength="200" required value="{$pilotos->puntos}"></input>
+            <input name="puntos" class="form-control" rows="3" maxlength="200" required ></input>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
             <button type="submit" class="btn btn-primary mt-2">Editar piloto</button>

@@ -68,9 +68,9 @@ switch ($params[0]) {
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->addEscuderia();
         break;
-    case 'eliminarEscuderias':
+    case 'eliminar':
         $escuderiacontroller = new EscuderiasController();
-        $escuderiacontroller->removeEscuderia($id);
+        $escuderiacontroller->removeEscuderia($params[1]);
             break;
 
     case 'login':// regitro,ingreso, validacion y salida del usuario 

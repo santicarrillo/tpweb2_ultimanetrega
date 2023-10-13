@@ -28,7 +28,7 @@
                 <td>{$escuderias->puntos_equipo|truncate:35}</td>
                 <td>{$escuderias->pos_equipos|truncate:35}</td>
                 <td><a href='form/{$escuderias->id}' type='button' class='btn btn-info'>Editar</a></td>
-                <td><a href='eliminarEscuderias/{$escuderias->id}' type='button' class='btn btn-danger'>Borrar</a></td>
+                <td><a href='eliminar/{$escuderias->id}' type='button' class='btn btn-danger'>Borrar</a></td>
                 
             </span> 
         </td>
