@@ -29,12 +29,16 @@ switch ($params[0]) {
     case 'editPilotosform':
         $pilotocontroller = new PilotoController();
         $id = $params[1];
-        $pilotocontroller->editView($id);
+        $pilotocontroller->showform($id);
         break;
     case 'editpiloto':
         $pilotocontroller = new PilotoController();
-        $id = $params[1];
-        $pilotocontroller->edit($id);
+        $pilotocontroller->edit($params[1]);
+        break;
+    case 'editPilotos': 
+        $pilotocontroller = new PilotoController();
+        $id = $_POST['id'];//$id = $params[0];$id_product = $_POST['id_product'];
+        $pilotocontroller->editPilotos($id);
         break;
     case 'pilotobyescuderia':
         $pilotocontroller = new PilotoController();
@@ -76,8 +80,7 @@ switch ($params[0]) {
         break;
     case 'editEquipo':
         $escuderiacontroller = new EscuderiasController();
-        $id = $params[1];
-        $escuderiacontroller->edit($id);
+        $escuderiacontroller->edit();
         break;
     case 'login':
         $controller = new AuthController();

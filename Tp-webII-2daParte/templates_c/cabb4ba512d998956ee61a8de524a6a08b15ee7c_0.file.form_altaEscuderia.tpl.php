@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-12 21:12:27
+/* Smarty version 4.2.1, created on 2023-10-13 01:11:24
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\form_altaEscuderia.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6528451bcf32c6_18303412',
+  'unifunc' => 'content_65287d1cae4226_83682984',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cabb4ba512d998956ee61a8de524a6a08b15ee7c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\form_altaEscuderia.tpl',
-      1 => 1697137943,
+      1 => 1697152282,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6528451bcf32c6_18303412 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65287d1cae4226_83682984 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- formulario de alta de tarea -->
 <main class="container mt-5">
      <div class="col">
@@ -58,23 +58,8 @@ function content_6528451bcf32c6_18303412 (Smarty_Internal_Template $_smarty_tpl)
     
     <div class="form-group">
         <label>Posicion del Equipo en el Campeonato</label>
-        <select required name="pos_equipos" class="form-control">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-            </select>
+        <input required name="pos_equipos" type="text" class="form-control">
+        
     </div>
 
     <button type="submit" class="btn btn-primary mt-2">Guardar</button>

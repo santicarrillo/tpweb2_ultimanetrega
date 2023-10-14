@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-13 00:13:29
+/* Smarty version 4.2.1, created on 2023-10-13 01:12:16
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\edit-equipos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65286f8968c268_93937383',
+  'unifunc' => 'content_65287d50e9f690_30514370',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bf4634c93f4c865e21d33f6988b8fe194e595885' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\edit-equipos.tpl',
-      1 => 1697148762,
+      1 => 1697152314,
       2 => 'file',
     ),
   ),
@@ -22,15 +22,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_65286f8968c268_93937383 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65287d50e9f690_30514370 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <h1 class="display-5 mt-5 text-center">Editar Equipos</h1>
 <div class="row justify-content-md-center">
 
-    <form action="editEquipo/<?php echo $_smarty_tpl->tpl_vars['escuderias']->value->{$_smarty_tpl->tpl_vars['id']->value};?>
-" method="POST" class="my-5" enctype="multipart/form-data">
+    <form action="editEquipo" method="POST" class="my-5" enctype="multipart/form-data">
         <div class="row">
             <div class="col-9">
                 <div class="form-group">

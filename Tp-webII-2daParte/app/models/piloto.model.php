@@ -36,7 +36,6 @@ class PilotoModel {
         $query = $this->db->prepare('INSERT INTO pilotos (nombre, campeonato, puntos) VALUES(?,?,?)');
         $query->execute([$nombre, $campeonato, $puntos]);
 
-        return $this->db->lastInsertId();
     }
 
     
@@ -68,11 +67,16 @@ class PilotoModel {
         
     }
 
-    function editById($nombre, $campeonato, $puntos, $id){
+    function updatePiloto($id, $nombre, $campeonato, $puntos){
         $query = $this->db->prepare('UPDATE `pilotos` SET nombre = ? , campeonato = ? , puntos = ? WHERE id = ?');
-        $query->execute([$nombre, $campeonato, $puntos, $id]);
+        $query->execute([$id, $nombre, $campeonato, $puntos]);
+    }
 
-        
+    function editAutores($id, $nombre, $campeonato, $puntos){
+        $editarpilotos = $this->db->prepare("UPDATE pilotos SET nombre = ?, campeonato = ?, puntos = ?  WHERE id=?");
+        $editarpilotos->execute([$nombre, $campeonato, $puntos, $id]);
+
+        return $editarpilotos;
     }
 
     

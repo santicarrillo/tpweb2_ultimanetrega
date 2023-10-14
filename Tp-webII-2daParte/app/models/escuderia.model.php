@@ -50,7 +50,6 @@ class EscuderiasModel {
         $query = $this->db->prepare('INSERT INTO escuderias (equipos, pilotos, description, puntos_equipo, pos_equipos) VALUES(?,?,?,?,?)');
         $query->execute([$id,$equipos, $pilotos, $description, $puntos_equipo, $pos_equipos]);
 
-        return $this->db->lastInsertId();
     }
 
     private function uploadImg($img){

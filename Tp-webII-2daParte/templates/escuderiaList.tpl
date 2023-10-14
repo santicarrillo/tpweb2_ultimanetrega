@@ -1,5 +1,8 @@
 {include file="header.tpl"}
-{include file="form_altaEscuderia.tpl"}
+{if isset($smarty.session.USER_ID)}
+    {include file="form_altaEscuderia.tpl"}
+{/if}
+
 
 <table class="table table-striped">
     <thead>
@@ -27,9 +30,10 @@
                 <td>{$escuderias->description|truncate:35}</td> 
                 <td>{$escuderias->puntos_equipo|truncate:35}</td>
                 <td>{$escuderias->pos_equipos|truncate:35}</td>
+            {if isset($smarty.session.USER_ID)}
                 <td><a href='editequipoform/{$escuderias->id}' type='button' class='btn btn-info'>Editar</a></td>
                 <td><a href='eliminar/{$escuderias->id}' type='button' class='btn btn-danger'>Borrar</a></td>
-                
+            {/if}
             </span> 
         </td>
                 

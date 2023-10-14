@@ -33,13 +33,14 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="about">Calendario 2023</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="logout">Logout</a>
-                        </li>
                     </ul>
+                        <div class="d-flex" role="search">
+                            {if !isset($smarty.session.USER_ID)}
+                                <a class="btn btn-secondary" href="login">Ingresar</a>
+                            {else}
+                                <a class="btn btn-secondary" href="logout">Cerrar sesion ({$smarty.session.USER_EMAIL})</a>
+                            {/if}
+                        </div>
                 </div>
             </div>
             </nav>

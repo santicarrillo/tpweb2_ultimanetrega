@@ -1,14 +1,8 @@
 <!-- formulario de alta de tarea -->
-<main class="container mt-5">
-     <div class="col">
-            <div class="center" style="width: 80rem" style="height: 10rem">
-                <img class="card-img-top" src="images/10.png">        
-            </div>
-        </div>
-    </main>
 
 
-<form action="guardar" method="POST" class="my-4">
+
+<form action="add" method="POST" class="my-4">
     <div class="row">
         <div class="col-9">
             <div class="form-group">

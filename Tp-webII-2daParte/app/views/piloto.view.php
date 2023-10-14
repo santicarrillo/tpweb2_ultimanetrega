@@ -31,10 +31,18 @@ class PilotoView {
         $this->smarty->display('pilotobyescuderia.tpl');
     }
 
-    function editPiloto($pilotos, $escuderias){
-        $this->smarty->assign("pilotos", $pilotos);
-        $this->smarty->assign("escuderias", $escuderias);
+    function showform($id){
+        $this->smarty->assign('basehref', BASE_URL);
+        $this->smarty->assign('id', $id);
         $this->smarty->display('edit-pilotos.tpl');
+    }
+
+    function printEdit($editarpilotos, $pilotos){
+        $this->smarty->assign('count', count($pilotos));
+        $this->smarty->assign('editarpilotos', $editarpilotos);
+        $this->smarty->assign('pilotos', $pilotos);
+
+        $this->smarty->display('pilotosList.tpl');
     }
 
     function success($success, $msg = null){

@@ -3,7 +3,7 @@
 <h1 class="display-5 mt-5 text-center">Editar Equipos</h1>
 <div class="row justify-content-md-center">
 
-    <form action="editEquipo/{$escuderias->$id}" method="POST" class="my-5" enctype="multipart/form-data">
+    <form action="editEquipo" method="POST" class="my-5" enctype="multipart/form-data">
         <div class="row">
             <div class="col-9">
                 <div class="form-group">

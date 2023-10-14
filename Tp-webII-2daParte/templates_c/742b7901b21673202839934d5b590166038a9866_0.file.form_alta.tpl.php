@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-12 23:47:48
+/* Smarty version 4.2.1, created on 2023-10-13 01:44:38
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\form_alta.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_652869843117b9_43241408',
+  'unifunc' => 'content_652884e60c1390_12288932',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '742b7901b21673202839934d5b590166038a9866' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\form_alta.tpl',
-      1 => 1697147264,
+      1 => 1697154224,
       2 => 'file',
     ),
   ),
@@ -20,18 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_652869843117b9_43241408 (Smarty_Internal_Template $_smarty_tpl) {
+function content_652884e60c1390_12288932 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- formulario de alta de tarea -->
-<main class="container mt-5">
-     <div class="col">
-            <div class="center" style="width: 80rem" style="height: 10rem">
-                <img class="card-img-top" src="images/10.png">        
-            </div>
-        </div>
-    </main>
 
 
-<form action="guardar" method="POST" class="my-4">
+
+<form action="add" method="POST" class="my-4">
     <div class="row">
         <div class="col-9">
             <div class="form-group">
