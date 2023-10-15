@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-13 01:44:38
+/* Smarty version 4.2.1, created on 2023-10-14 05:02:26
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\form_alta.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_652884e60c1390_12288932',
+  'unifunc' => 'content_652a04c293fc05_23154553',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '742b7901b21673202839934d5b590166038a9866' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\form_alta.tpl',
-      1 => 1697154224,
+      1 => 1697252535,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_652884e60c1390_12288932 (Smarty_Internal_Template $_smarty_tpl) {
-?><!-- formulario de alta de tarea -->
-
-
-
-<form action="add" method="POST" class="my-4">
+function content_652a04c293fc05_23154553 (Smarty_Internal_Template $_smarty_tpl) {
+?><form action="add" method="POST" class="my-4">
     <div class="row">
         <div class="col-9">
             <div class="form-group">

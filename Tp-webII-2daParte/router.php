@@ -18,7 +18,7 @@ switch ($params[0]) {
         $pilotocontroller = new PilotoController();
         $pilotocontroller->showFormula1();
         break;
-    case 'guardar':
+    case 'add':
         $pilotocontroller = new PilotoController();
         $pilotocontroller->addPiloto();
         break;
@@ -29,16 +29,12 @@ switch ($params[0]) {
     case 'editPilotosform':
         $pilotocontroller = new PilotoController();
         $id = $params[1];
-        $pilotocontroller->showform($id);
+        $pilotocontroller->editView($id);
         break;
     case 'editpiloto':
         $pilotocontroller = new PilotoController();
-        $pilotocontroller->edit($params[1]);
-        break;
-    case 'editPilotos': 
-        $pilotocontroller = new PilotoController();
-        $id = $_POST['id'];//$id = $params[0];$id_product = $_POST['id_product'];
-        $pilotocontroller->editPilotos($id);
+        $id = $params[1];
+        $pilotocontroller->edit($id);
         break;
     case 'pilotobyescuderia':
         $pilotocontroller = new PilotoController();
@@ -48,15 +44,16 @@ switch ($params[0]) {
         $pilotocontroller = new AboutController();
         $pilotocontroller->showAbout();
         break;
+    case 'pilotosbyescuderia':
+        $escuderiacontroller = new EscuderiasController();
+        $id = $params[1];
+        $escuderiacontroller->showByEscuderias($id);
+        break;
     case 'escuderia':
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->showFormula1();
         break;
     case 'escuderias':
-        $escuderiacontroller = new EscuderiasController();
-        $escuderiacontroller->showEscuderias($id);
-        break;
-    case 'pilotobyescuderia':
         $escuderiacontroller = new EscuderiasController();
         $escuderiacontroller->showEscuderias($id);
         break;
@@ -78,9 +75,10 @@ switch ($params[0]) {
         $id = $params[1];
         $escuderiacontroller->editView($id);
         break;
-    case 'editEquipo':
+    case 'editEquipos':
         $escuderiacontroller = new EscuderiasController();
-        $escuderiacontroller->edit();
+        $id = $params[1];
+        $escuderiacontroller->edit($id);
         break;
     case 'login':
         $controller = new AuthController();

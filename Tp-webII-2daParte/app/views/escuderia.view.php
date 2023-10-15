@@ -58,4 +58,10 @@ class EscuderiasView {
         $this->smarty->display('success.tpl');
     }
 
+    function showAllEscuderias($escuderias,$pilotos){
+        $this->smarty->assign("escuderias", $escuderias);
+        $this->smarty->assign("pilotos", $pilotos);
+        $this->smarty->display('escuderias.tpl');
+    }
+
 }

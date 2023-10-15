@@ -25,9 +25,9 @@ class PilotoModel {
     }
 
 
-    function getPilotos() {
-        $query = $this->db->prepare('SELECT * FROM pilotos');
-        $query->execute();
+    function getPilotos($id) {
+        $query = $this->db->prepare('SELECT * FROM pilotos WHERE id = ?');
+        $query->execute([$id]);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
@@ -35,7 +35,7 @@ class PilotoModel {
     function insertPiloto($nombre, $campeonato, $puntos) {
         $query = $this->db->prepare('INSERT INTO pilotos (nombre, campeonato, puntos) VALUES(?,?,?)');
         $query->execute([$nombre, $campeonato, $puntos]);
-
+        return $this->db->lastInsertId();
     }
 
     
@@ -52,8 +52,8 @@ class PilotoModel {
     function getPiloto($id){
         $query = $this->db->prepare("SELECT * FROM pilotos WHERE id=?");
         $query->execute([$id]);
-        $pilotos = $query->fetch(PDO::FETCH_OBJ);
-        return $pilotos;
+        $piloto = $query->fetch(PDO::FETCH_OBJ);
+        return $piloto;
     }
 
 
@@ -62,7 +62,7 @@ class PilotoModel {
         $query->execute();
         
         $pilotos = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
-        var_dump($query->errorInfo());
+        
         return $pilotos;
         
     }
@@ -71,14 +71,19 @@ class PilotoModel {
         $query = $this->db->prepare('UPDATE `pilotos` SET nombre = ? , campeonato = ? , puntos = ? WHERE id = ?');
         $query->execute([$id, $nombre, $campeonato, $puntos]);
     }
-
-    function editAutores($id, $nombre, $campeonato, $puntos){
-        $editarpilotos = $this->db->prepare("UPDATE pilotos SET nombre = ?, campeonato = ?, puntos = ?  WHERE id=?");
-        $editarpilotos->execute([$nombre, $campeonato, $puntos, $id]);
-
-        return $editarpilotos;
+    
+    function getByEscuderias($id_escuderias){
+        $query = $this->db->prepare("SELECT * FROM pilotos WHERE id = ?");
+        $query->execute([$id_escuderias]);
+        $pilotos = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de productos
+        
+        return $pilotos;
     }
 
+    function editById($nombre,$campeonato,$puntos,$id){
+        $query = $this->db->prepare('UPDATE `pilotos` SET nombre = ?, campeonato = ?, puntos = ? WHERE id = ?');
+        $query->execute([$nombre, $campeonato, $puntos, $id]);
+    }
     
 
 

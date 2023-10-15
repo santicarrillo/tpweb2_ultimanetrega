@@ -41,15 +41,15 @@ class EscuderiasModel {
     function getEscuderia($id){
         $query = $this->db->prepare('SELECT * FROM escuderias WHERE id = ?');
         $query->execute([$id]);
-        $escuderias = $query->fetch(PDO::FETCH_OBJ);
+        $escuderia = $query->fetch(PDO::FETCH_OBJ);
         
-        return $escuderias;
+        return $escuderia;
     }
 
-    function insertEscuderia($id,$equipos, $pilotos, $description, $puntos_equipo, $pos_equipos) {
+    function insertEscuderia($equipos, $pilotos, $description, $puntos_equipo, $pos_equipos) {
         $query = $this->db->prepare('INSERT INTO escuderias (equipos, pilotos, description, puntos_equipo, pos_equipos) VALUES(?,?,?,?,?)');
-        $query->execute([$id,$equipos, $pilotos, $description, $puntos_equipo, $pos_equipos]);
-
+        $query->execute([$equipos, $pilotos, $description, $puntos_equipo, $pos_equipos]);
+        return $this->db->lastInsertId();
     }
 
     private function uploadImg($img){
@@ -75,8 +75,24 @@ class EscuderiasModel {
     }
 
     function editEquipoById($equipos,$pilotos,$puntos_equipo,$description,$pos_equipos,$id){
-        $query = $$this->db->prepare('UPDATE `escuderias` SET equipos = ? , pilotos = ? , puntos_equipo = ? , description = ? , pos_equipos = ? WHERE id = ?');
+        $query = $this->db->prepare('UPDATE `escuderias` SET equipos = ? , pilotos = ? , puntos_equipo = ? , description = ? , pos_equipos = ? WHERE id = ?');
         $query->execute([$equipos,$pilotos,$puntos_equipo,$description,$pos_equipos,$id]);
-    }   
+    }  
+    
+    function getAll(){
+        $query = $this->db->prepare("SELECT * FROM escuderias");
+        $query->execute();
+
+        $escuderias = $query->fetchAll(PDO::FETCH_OBJ);
+        return $escuderias;
+    }
+
+    function getByEscuderias($id){
+        $query = $this->db->prepare("SELECT * FROM escuderias WHERE id = ?");
+        $query->execute([$id]);
+        $escuderias = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $escuderias;
+    }
 }
 

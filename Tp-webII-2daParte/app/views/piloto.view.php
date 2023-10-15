@@ -26,6 +26,12 @@ class PilotoView {
         header("Location: ".BASE_URL."pilotos");
     }
 
+    function showAllEscuderias($escuderias, $pilotos){
+        $this->smarty->assign("pilotos", $pilotos);
+        $this->smarty->assign("escuderias", $escuderias);
+        $this->smarty->display('pilotobyescuderia.tpl');
+    }
+
     function showAll($pilotos){
         $this->smarty->assign("pilotos", $pilotos);
         $this->smarty->display('pilotobyescuderia.tpl');
@@ -37,12 +43,9 @@ class PilotoView {
         $this->smarty->display('edit-pilotos.tpl');
     }
 
-    function printEdit($editarpilotos, $pilotos){
-        $this->smarty->assign('count', count($pilotos));
-        $this->smarty->assign('editarpilotos', $editarpilotos);
-        $this->smarty->assign('pilotos', $pilotos);
-
-        $this->smarty->display('pilotosList.tpl');
+    function editPiloto($piloto){
+        $this->smarty->assign("piloto", $piloto);
+        $this->smarty->display('edit-pilotos.tpl');
     }
 
     function success($success, $msg = null){

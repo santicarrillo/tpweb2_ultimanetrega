@@ -25,8 +25,8 @@ class EscuderiasController {
     }
 
     public function showEscuderias($id){
-        $escuderias = $this->model->getEscuderias($id);
-        $this->view->showEscuderias($escuderias);    
+        $escuderias = $this->model->getEscuderia($id);
+        $this->view->showEscuderias($escuderias);  
     }
 
     public function showEscuderia() {
@@ -46,17 +46,16 @@ class EscuderiasController {
         $authHelper = new AuthHelper();
         $authHelper->checkLoggedIn();
 
-        if((isset($_POST['id'])&&isset($_POST['equipos'])&&isset($_POST['pilotos'])&&isset($_POST['description'])&&isset($_POST['puntos_equipo'])&&isset($_POST['pos_equipos']))
-            &&(!empty($_POST['id'])&&!empty($_POST['equipos'])&&!empty($_POST['pilotos'])&&!empty($_POST['description'])&&!empty($_POST['puntos_equipo'])&&!empty($_POST['pos_equipos']))){
+        if((isset($_POST['equipos'])&&isset($_POST['pilotos'])&&isset($_POST['description'])&&isset($_POST['puntos_equipo'])&&isset($_POST['pos_equipos']))
+            &&!empty($_POST['equipos'])&&!empty($_POST['pilotos'])&&!empty($_POST['description'])&&!empty($_POST['puntos_equipo'])&&!empty($_POST['pos_equipos'])){
             
-            $id = $_POST['id'];
             $equipos = $_POST['equipos'];
             $puntos_equipo = $_POST['puntos_equipo'];
             $description = $_POST['description'];
             $pilotos = $_POST['pilotos'];
             $pos_equipos = $_POST['pos_equipos'];
         
-            $id = $this->model->insertEscuderia($id,$equipos, $pilotos, $description, $puntos_equipo, $pos_equipos);
+            $this->model->insertEscuderia($equipos, $pilotos, $description, $puntos_equipo, $pos_equipos);
             $this->view->success(true);
         } else {
             $this->view->success(false,"Faltan datos obligatorios");
@@ -81,21 +80,20 @@ class EscuderiasController {
         $this->view->editEscuderia($escuderia);
     }
 
-    function edit(){
+    function edit($id){
         $authHelper = new AuthHelper();
         $authHelper->checkLoggedIn();
 
-        if((isset($_POST['equipos'])&&isset($_POST['pilotos'])&&isset($_POST['description'])&&isset($_POST['puntos_equipo'])&&isset($_POST['pos_equipos'])&&isset($_POST['id']))
-            &&(!empty($_POST['equipos'])&&!empty($_POST['pilotos'])&&!empty($_POST['description'])&&!empty($_POST['puntos_equipo'])&&!empty($_POST['pos_equipos'])&&!empty($_POST['id']))){
+        if((isset($_POST['equipos'])&&isset($_POST['pilotos'])&&isset($_POST['description'])&&isset($_POST['puntos_equipo'])&&isset($_POST['pos_equipos']))
+            &&(!empty($_POST['equipos'])&&!empty($_POST['pilotos'])&&!empty($_POST['description'])&&!empty($_POST['puntos_equipo'])&&!empty($_POST['pos_equipos']))){
         
                 $equipos = $_POST['equipos'];
                 $pilotos = $_POST['pilotos'];
                 $puntos_equipo = $_POST['puntos_equipo'];
                 $description = $_POST['description'];
                 $pos_equipos = $_POST['pos_equipos'];
-                $id = $_POST['id'];
 
-            $escuderia = $this->model->editEquipoById($equipos,$pilotos,$puntos_equipo,$description,$pos_equipos,$id);
+            $escuderias = $this->model->editEquipoById($equipos,$pilotos,$puntos_equipo,$description,$pos_equipos,$id);
             
             $this->view->success(true);
         
@@ -103,5 +101,11 @@ class EscuderiasController {
                 $this->view->success(false, "Faltan datos obligatorios");
                 die();
         }
+    }
+
+    function showByEscuderias($id){
+        $escuderias = $this->model->getByEscuderias($id);
+        $pilotos = $this->modelPilotos->getAll();
+        $this->view->showAllEscuderias($escuderias, $pilotos);
     }
 }

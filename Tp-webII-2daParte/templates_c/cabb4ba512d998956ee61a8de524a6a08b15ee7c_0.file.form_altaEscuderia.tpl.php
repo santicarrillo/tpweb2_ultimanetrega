@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-13 01:11:24
+/* Smarty version 4.2.1, created on 2023-10-14 05:42:30
   from 'C:\xampp\htdocs\Tp-webII-2daParte\templates\form_altaEscuderia.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65287d1cae4226_83682984',
+  'unifunc' => 'content_652a0e26b98e44_52657977',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cabb4ba512d998956ee61a8de524a6a08b15ee7c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tp-webII-2daParte\\templates\\form_altaEscuderia.tpl',
-      1 => 1697152282,
+      1 => 1697254594,
       2 => 'file',
     ),
   ),
@@ -20,18 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65287d1cae4226_83682984 (Smarty_Internal_Template $_smarty_tpl) {
-?><!-- formulario de alta de tarea -->
-<main class="container mt-5">
-     <div class="col">
-            <!--<div class="center" style="width: 80rem" style="height: 10rem">
-                <img class="card-img-top" src="images/10.png">        
-            </div>-->
-        </div>
-    </main>
-
-
-<form action="agregar" method="POST" class="my-4">
+function content_652a0e26b98e44_52657977 (Smarty_Internal_Template $_smarty_tpl) {
+?><form action="agregar" method="POST" class="my-4">
     <div class="row">
         <div class="col-9">
             <div class="form-group">
