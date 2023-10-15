@@ -25,9 +25,9 @@ class PilotoModel {
     }
 
 
-    function getPilotos($id) {
-        $query = $this->db->prepare('SELECT * FROM pilotos WHERE id = ?');
-        $query->execute([$id]);
+    function getPilotos() {
+        $query = $this->db->prepare('SELECT * FROM pilotos');
+        $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
@@ -35,7 +35,7 @@ class PilotoModel {
     function insertPiloto($nombre, $campeonato, $puntos) {
         $query = $this->db->prepare('INSERT INTO pilotos (nombre, campeonato, puntos) VALUES(?,?,?)');
         $query->execute([$nombre, $campeonato, $puntos]);
-        return $this->db->lastInsertId();
+        return ;
     }
 
     
@@ -52,8 +52,8 @@ class PilotoModel {
     function getPiloto($id){
         $query = $this->db->prepare("SELECT * FROM pilotos WHERE id=?");
         $query->execute([$id]);
-        $piloto = $query->fetch(PDO::FETCH_OBJ);
-        return $piloto;
+        $pilotos = $query->fetch(PDO::FETCH_OBJ);
+        return $pilotos;
     }
 
 
@@ -62,28 +62,18 @@ class PilotoModel {
         $query->execute();
         
         $pilotos = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
-        
+        var_dump($query->errorInfo());
         return $pilotos;
         
     }
 
-    function updatePiloto($id, $nombre, $campeonato, $puntos){
+    function editById($nombre, $campeonato, $puntos, $id){
         $query = $this->db->prepare('UPDATE `pilotos` SET nombre = ? , campeonato = ? , puntos = ? WHERE id = ?');
-        $query->execute([$id, $nombre, $campeonato, $puntos]);
-    }
-    
-    function getByEscuderias($id_escuderias){
-        $query = $this->db->prepare("SELECT * FROM pilotos WHERE id = ?");
-        $query->execute([$id_escuderias]);
-        $pilotos = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de productos
+        $query->execute([$nombre, $campeonato, $puntos, $id]);
+
         
-        return $pilotos;
     }
 
-    function editById($nombre,$campeonato,$puntos,$id){
-        $query = $this->db->prepare('UPDATE `pilotos` SET nombre = ?, campeonato = ?, puntos = ? WHERE id = ?');
-        $query->execute([$nombre, $campeonato, $puntos, $id]);
-    }
     
 
 

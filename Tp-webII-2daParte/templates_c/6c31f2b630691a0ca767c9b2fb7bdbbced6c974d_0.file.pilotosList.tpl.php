@@ -1,34 +1,38 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-13 00:06:03
+/* Smarty version 4.2.1, created on 2023-10-16 00:22:51
   from 'C:\xampp\htdocs\web2\Tp-webII-2daParte\templates\pilotosList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_65286dcb4124c4_68314428',
+  'unifunc' => 'content_652c663b496d11_28801510',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6c31f2b630691a0ca767c9b2fb7bdbbced6c974d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\templates\\pilotosList.tpl',
-      1 => 1697148358,
+      1 => 1697165059,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:img_formalta.tpl' => 1,
     'file:form_alta.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_65286dcb4124c4_68314428 (Smarty_Internal_Template $_smarty_tpl) {
+function content_652c663b496d11_28801510 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\libs\\smarty-4.2.1\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:form_alta.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:img_formalta.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+<?php if ((isset($_SESSION['USER_ID']))) {?>
+    <?php $_smarty_tpl->_subTemplateRender("file:form_alta.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}?>
 
 <table class="table table-striped">
     <thead>
@@ -56,10 +60,12 @@ $_smarty_tpl->tpl_vars['pilotos']->do_else = false;
 </td> 
                 <td><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['pilotos']->value->puntos,25);?>
 </td>
+            <?php if ((isset($_SESSION['USER_ID']))) {?>
                 <td><a href='editPilotosform/<?php echo $_smarty_tpl->tpl_vars['pilotos']->value->id;?>
 ' type='button' class='btn btn-info'>Editar</a></td>
-                <td><a href='eliminarpilotos/<?php echo $_smarty_tpl->tpl_vars['pilotos']->value->id;?>
-' type='button' class='btn btn-danger'>Borrar</a></td>           
+                <td><a href='eliminarPilotos/<?php echo $_smarty_tpl->tpl_vars['pilotos']->value->id;?>
+' type='button' class='btn btn-danger'>Borrar</a></td>
+            <?php }?>           
             </span> 
         </td>
         </tr>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-13 02:47:56
+/* Smarty version 4.2.1, created on 2023-10-16 00:27:11
   from 'C:\xampp\htdocs\web2\Tp-webII-2daParte\templates\form_alta.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_652893bca837b1_47050174',
+  'unifunc' => 'content_652c673f104405_38240831',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '247e61b71f4352e824a16b8a04c65a250c147ef0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\templates\\form_alta.tpl',
-      1 => 1697157678,
+      1 => 1697263335,
       2 => 'file',
     ),
   ),
@@ -20,18 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_652893bca837b1_47050174 (Smarty_Internal_Template $_smarty_tpl) {
-?><!-- formulario de alta de tarea -->
-<main class="container mt-5">
-     <div class="col">
-            <div class="center" style="width: 80rem" style="height: 10rem">
-                <img class="card-img-top" src="images/10.png">        
-            </div>
-        </div>
-    </main>
-
-
-<form action="guardar" method="POST" class="my-4">
+function content_652c673f104405_38240831 (Smarty_Internal_Template $_smarty_tpl) {
+?><form action="add" method="POST" class="my-4">
     <div class="row">
         <div class="col-9">
             <div class="form-group">
@@ -59,6 +49,11 @@ function content_652893bca837b1_47050174 (Smarty_Internal_Template $_smarty_tpl)
                     <option value="13">13</option>
                     <option value="14">14</option>
                     <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
                 </select>
             </div>
         </div>
@@ -69,6 +64,6 @@ function content_652893bca837b1_47050174 (Smarty_Internal_Template $_smarty_tpl)
         <input required name="puntos" type="text" class="form-control">
     </div>
 
-    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+    <button type="submit" class="btn btn-primary mt-2">Agregar</button>
 </form><?php }
 }

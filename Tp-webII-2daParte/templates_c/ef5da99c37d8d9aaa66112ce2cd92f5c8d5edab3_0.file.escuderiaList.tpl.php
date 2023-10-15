@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-13 03:05:56
+/* Smarty version 4.2.1, created on 2023-10-16 00:27:51
   from 'C:\xampp\htdocs\web2\Tp-webII-2daParte\templates\escuderiaList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_652897f4b7ba88_08732584',
+  'unifunc' => 'content_652c67672b1282_93502816',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef5da99c37d8d9aaa66112ce2cd92f5c8d5edab3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\templates\\escuderiaList.tpl',
-      1 => 1697158459,
+      1 => 1697164926,
       2 => 'file',
     ),
   ),
@@ -23,21 +23,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_652897f4b7ba88_08732584 (Smarty_Internal_Template $_smarty_tpl) {
+function content_652c67672b1282_93502816 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\web2\\Tp-webII-2daParte\\libs\\smarty-4.2.1\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:form_altaEscuderia.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
+if ((isset($_SESSION['USER_ID']))) {?>
+    <?php $_smarty_tpl->_subTemplateRender("file:form_altaEscuderia.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}?>
+
 
 <table class="table table-striped">
     <thead>
-        <th></th>    
         <th></th> 
+        <th></th>
         <th>Equipos</th>
         <th>Pilotos</th>
         <th>Descripcion</th>
         <th>Puntos Por Equipo</th>
-        <th>Posicion del Equipo en el Campeonato</th>
+        <th>Posicion en el Campeonato</th>
         <th></th>
         <th></th>
         
@@ -52,8 +54,7 @@ $_smarty_tpl->tpl_vars['escuderias']->do_else = false;
     <tr>
     <td><a class="btn btn-success" href="equipos/<?php echo $_smarty_tpl->tpl_vars['escuderias']->value->id;?>
 ">Ver mas<a></td>
-        <td><?php echo $_smarty_tpl->tpl_vars['escuderias']->value->equipos;?>
-</td> 
+         
         <td> 
             <span> 
                 
@@ -67,11 +68,12 @@ $_smarty_tpl->tpl_vars['escuderias']->do_else = false;
 </td>
                 <td><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['escuderias']->value->pos_equipos,35);?>
 </td>
-                <td><a href='form/<?php echo $_smarty_tpl->tpl_vars['escuderias']->value->id;?>
+            <?php if ((isset($_SESSION['USER_ID']))) {?>
+                <td><a href='editequipoform/<?php echo $_smarty_tpl->tpl_vars['escuderias']->value->id;?>
 ' type='button' class='btn btn-info'>Editar</a></td>
                 <td><a href='eliminar/<?php echo $_smarty_tpl->tpl_vars['escuderias']->value->id;?>
 ' type='button' class='btn btn-danger'>Borrar</a></td>
-                
+            <?php }?>
             </span> 
         </td>
                 
