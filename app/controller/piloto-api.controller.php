@@ -34,15 +34,7 @@
 
 
 
-            //Miembro b: filtrado
-            if ((isset($_GET['field'])&&isset($_GET['value']))){
-                $value = $_GET['value'];
-                //se verifica que lo que se haya recibido por parametro GET pertenezca al array de opciones posibles
-                if (in_array($_GET['field'], $fields))
-                    $field = $_GET['field'];
-                else
-                    return $this->view->response("$field no es un campo existente de la tabla", 400);
-            }
+            
         }
 
         // Miembro b: Obtener un elemento (piloto) por ID
