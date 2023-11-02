@@ -6,7 +6,7 @@ class PilotoModel {
 
     //Abro la conexion
     function __construct(){
-        $this->db = new PDO('mysql:host='. MYSQL_HOST .';dbname='. MYSQL_DB .';charset=utf8', MYSQL_USER, MYSQL_PASS);
+        $this->db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME .';charset='.DB_Charset,DB_USER,DB_PASS);
         $this->deploy();
     }
 
@@ -18,6 +18,14 @@ class PilotoModel {
         $pilotos = $query->fetchAll(PDO::FETCH_OBJ); 
 
         return $pilotos;
+    }
+    function getpilotos() {
+        $query = $this->db->prepare('SELECT * FROM pilotos');
+        $query->execute();
+
+        // $tasks es un arreglo de tareas
+         return $query->fetchAll(PDO::FETCH_OBJ);
+         
     }
 
     function get($id){

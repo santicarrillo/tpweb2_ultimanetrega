@@ -1,8 +1,8 @@
 <?php
-    require_once 'config.php';
+    require_once 'app/model/config.php';
     require_once 'libs/router.php';
 
-    require_once 'app/controllers/piloto-api.controller.php';
+    require_once 'app/controller/piloto-api.controller.php';
 
     $router = new Router();
 

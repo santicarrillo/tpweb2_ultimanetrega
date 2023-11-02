@@ -22,20 +22,24 @@
         private function getData(){
             return json_decode($this->data);
         }
+        
+        //mi hembro a: Listado ordenado
+        function get($params = []) {
+            if (empty($params)){
 
-        function getPilotos($params = null){
-
-
-
-
-
-
-
+                $pilotos = $this->model->getpilotos();
+                $this->view->response($pilotos, 200);   
 
 
-
-            
+                header('Content-Type: application/json');
+                echo json_encode($pilotos);    
         }
+
+
+
+
+
+
 
         // Miembro b: Obtener un elemento (piloto) por ID
         function getPiloto($params = null){
@@ -57,6 +61,7 @@
                 return;
             }
             $piloto = $this->getData();
+
             if (empty($piloto->nombre)||empty($piloto->campeonato)||empty($piloto->puntos)||empty($piloto->id_escuderia)){
                 $this->view->response("Complete los datos", 400);
             } else {
@@ -70,6 +75,5 @@
         function error(){
             return $this->view->response("La ruta es incorrecta", 400);
         }
-
-
+    }
 }
