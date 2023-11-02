@@ -34,7 +34,15 @@
 
 
 
-            
+            //Miembro b: filtrado
+            if ((isset($_GET['field'])&&isset($_GET['value']))){
+                $value = $_GET['value'];
+                //se verifica que lo que se haya recibido por parametro GET pertenezca al array de opciones posibles
+                if (in_array($_GET['field'], $fields))
+                    $field = $_GET['field'];
+                else
+                    return $this->view->response("$field no es un campo existente de la tabla", 400);
+            }
         }
 
         // Miembro b: Obtener un elemento (piloto) por ID
@@ -63,6 +71,22 @@
                 $id = $this->model->insert($piloto->nombre, $piloto->campeonato, $piloto->puntos, $piloto->id_escuderia);
                 $piloto = $this->model->get($id);
                 $this->view->response($piloto, 201);
+            }
+        }
+
+        function deletePiloto($params = null){
+            if(!$this->authHelper->isLoggedIn()){
+                $this->view->response("No estas logeado", 401);
+                return;
+            }
+
+            id = $params[':ID'];
+            $piloto = $this->model->get($id);
+            if ($piloto){
+                $this->model->delete($id);
+                $this->view->response("Elemento con el id = $id eliminado con exito");
+            } else{
+                $this->view->response("el piloto con el id = $id no existe", 404);
             }
         }
 
