@@ -22,24 +22,28 @@
         private function getData(){
             return json_decode($this->data);
         }
-        
-        //mi hembro a: Listado ordenado
-        function getlist($params = []) {
-            if (empty($params)){
 
-                $pilotos = $this->model->getpilotos();
-                $this->view->response($pilotos, 200);   
+        function getPilotos($params = null){
 
 
-                header('Content-Type: application/json');
-                echo json_encode($pilotos);    
+
+
+
+
+
+
+
+
+            //Miembro b: filtrado
+            if ((isset($_GET['field'])&&isset($_GET['value']))){
+                $value = $_GET['value'];
+                //se verifica que lo que se haya recibido por parametro GET pertenezca al array de opciones posibles
+                if (in_array($_GET['field'], $fields))
+                    $field = $_GET['field'];
+                else
+                    return $this->view->response("$field no es un campo existente de la tabla", 400);
+            }
         }
-
-
-
-
-
-
 
         // Miembro b: Obtener un elemento (piloto) por ID
         function getPiloto($params = null){
@@ -61,7 +65,6 @@
                 return;
             }
             $piloto = $this->getData();
-
             if (empty($piloto->nombre)||empty($piloto->campeonato)||empty($piloto->puntos)||empty($piloto->id_escuderia)){
                 $this->view->response("Complete los datos", 400);
             } else {
@@ -71,9 +74,27 @@
             }
         }
 
+        // se realiza la funcion de borrar un item
+        function deletePiloto($params = null){
+            if(!$this->authHelper->isLoggedIn()){
+                $this->view->response("No estas logeado", 401);
+                return;
+            }
+
+            $id = $params[':ID'];
+            $piloto = $this->model->get($id);
+            if ($piloto){
+                $this->model->delete($id);
+                $this->view->response("Elemento con el id = $id eliminado con exito");
+            } else{
+                $this->view->response("el piloto con el id = $id no existe", 404);
+            }
+        }
+
         //En el caso que la ruta sea incorrecta
         function error(){
             return $this->view->response("La ruta es incorrecta", 400);
         }
-    }
+
+
 }
