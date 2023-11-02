@@ -35,4 +35,9 @@ class PilotoModel {
         return $this->db->lastInsertId();
     }
 
+    function delete($id){
+        $query = $this->db->prepare('DELETE FROM pilotos WHERE id = ?');
+        $query->execute([$id]);
+    }
+
 }

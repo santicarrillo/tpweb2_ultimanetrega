@@ -74,13 +74,14 @@
             }
         }
 
+        // se realiza la funcion de borrar un item
         function deletePiloto($params = null){
             if(!$this->authHelper->isLoggedIn()){
                 $this->view->response("No estas logeado", 401);
                 return;
             }
 
-            id = $params[':ID'];
+            $id = $params[':ID'];
             $piloto = $this->model->get($id);
             if ($piloto){
                 $this->model->delete($id);
