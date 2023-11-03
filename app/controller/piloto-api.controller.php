@@ -1,6 +1,6 @@
 <?php
     require_once './app/models/piloto.model.php';
-    
+
     require_once './app/views/api.view.php';
     require_once './app/helpers/auth-api.helper.php';
     
@@ -40,7 +40,6 @@
             $offset = 0;
             $field = null;
             $value = null;
-<<<<<<< HEAD
 
 
             //Miembro b: filtrado
@@ -80,12 +79,10 @@
                         return $this->view->response("El limite debe ser menor a $total", 400);
                 }
             }
-        }
-=======
+        
             
             
              //Miembro b: filtrado
-                
                   if ((isset($_GET['field'])&&isset($_GET['value']))){
                        $value = $_GET['value'];
                  //se verifica que lo que se haya recibido por parametro GET pertenezca al array de opciones posibles
@@ -95,7 +92,7 @@
                         return $this->view->response("$field no es un campo existente de la tabla", 400);
                  }
             
-               
+                
                     
             //Ordenado por un campo asc o desc Alumno A
             if ((isset($_GET['sort'])&&isset($_GET['order']))){
@@ -123,9 +120,8 @@
                         return $this->view->response("El limite debe ser menor a $total", 400);
                 }
             }
->>>>>>> 6ca30cac1570a1f499dea97e9b9dcb7bd20c678d
+        }
 
-         }
             function editProduct($params = null){
                 if(!$this->authHelper->isLoggedIn()){
                         $this->view->response("No estas logeado", 401);
@@ -186,17 +182,17 @@
             $piloto = $this->model->get($id);
             if ($piloto){
                 $this->model->delete($id);
-<<<<<<< HEAD
+
                 $this->view->response("Elemento con el id = $id eliminado con exito", 201);
-=======
+
                 $this->view->response("Elemento con el id = $id eliminado con exito",200);
->>>>>>> 6ca30cac1570a1f499dea97e9b9dcb7bd20c678d
+
             } else{
                 $this->view->response("el piloto con el id = $id no existe", 404);
             }
         }
 
-        function editProduct($params = null){
+        function edit($params = null){
             if(!$this->authHelper->isLoggedIn()){
                     $this->view->response("No estas logeado", 401);
                     return;
