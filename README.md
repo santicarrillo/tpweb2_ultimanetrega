@@ -1,6 +1,6 @@
 # Formula 1 API
 
-Endpoint de la API : **http://localhost/TPe-webII-parte3/api/pilotos**
+Endpoint de la API : **http://localhost/TPe-webII-parte3/api/escuderias**
 
 # Endpoints:
 
@@ -9,7 +9,7 @@ Endpoint de la API : **http://localhost/TPe-webII-parte3/api/pilotos**
 
 ## Servicios GET
 
-- `GET /pilotos`: 
+- `GET /escuderias`: 
 
     - #### Ordenamiento por campos
         
@@ -20,25 +20,25 @@ Endpoint de la API : **http://localhost/TPe-webII-parte3/api/pilotos**
 
     - #### Paginacion
 
-        - `GET /pilotos?limit=value&pag=value`  
+        - `GET /escuderias?limit=value&pag=value`  
 
         
 
         
 
     - #### Filtrado
-        - `GET /pilotos?field=value&value=value`
+        - `GET /escuderias?field=value&value=value`
 
         
 
 
-- `GET /pilotos/:ID`: 
+- `GET /escuderia/:ID`: 
 
 
 
 
 ## Servicio POST
-- `POST /pilotos`: 
+- `POST /escuderias`: 
 
 
 
@@ -46,7 +46,7 @@ Endpoint de la API : **http://localhost/TPe-webII-parte3/api/pilotos**
 
 
 ## Servicio PUT
-- `PUT /pilotos/:ID`  
+- `PUT /escuderias/:ID`  
    
 
 
@@ -55,7 +55,7 @@ Endpoint de la API : **http://localhost/TPe-webII-parte3/api/pilotos**
 
 
 ## Servicio DELETE
-- `DELETE /pilotos/:ID`
+- `DELETE /escuderias/:ID`
     
 
 
