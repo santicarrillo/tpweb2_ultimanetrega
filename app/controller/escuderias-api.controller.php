@@ -1,9 +1,9 @@
 <?php
-/*
-    require_once './app/models/escuderias.model.php';
 
-    require_once './app/views/api.view.php';
-    require_once './app/helpers/auth-api.helper.php';
+    require_once 'app/model/escuderias.model.php';
+
+    require_once 'app/view/api.view.php';
+    require_once 'app/helpers/auth-api.helper.php';
     
     class EscuderiasApiController {
         private $model;
@@ -27,10 +27,10 @@
 
         function getAll(){
             $escuderias = $this->model->getAll();
-            $this->view->response($escuderia, 201);
+            $this->view->response($escuderias, 201);
         }
 
-        /*
+        
         // alumno  A llama y ordena el listado
         function get($params = null){
             $params = [':ID'];
@@ -168,4 +168,3 @@
 
 }
  
-*/
