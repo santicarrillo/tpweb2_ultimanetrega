@@ -50,12 +50,12 @@
             $value = null;
 
             // Miembro b: Obtener un elemento (piloto) por ID
-            if(empty($params)){
+            if(empty($id)){
                 $escuderias = $this->model->getAll($limit, $offset, $sort, $order);
                 return $this->view->response($escuderias,200);
 
             } else {
-                $escuderia = $this->model->get($params[":ID"]);
+                $escuderia = $this->model->get($id);
                 if(!empty($escuderia)){
                     return $this->view->response($escuderia, 200);
                 }

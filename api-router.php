@@ -10,7 +10,7 @@
     //se define la tabla de ruteo
     #                 endpoint   verbo     controller           método
     $router->addRoute('escuderias', 'GET', 'EscuderiasApiController', 'getAll');
-    $router->addRoute('escuderias/:ID', 'GET', 'EscuderiasApiController', 'getEscuderia');
+    $router->addRoute('escuderias/:ID', 'GET', 'EscuderiasApiController', 'get');
     $router->addRoute('escuderias', 'POST', 'EscuderiasApiController', 'insertEscuderia');
     $router->addRoute('escuderias/:ID', 'DELETE', 'EscuderiasApiController', 'deleteEscuderia');
     $router->addRoute('escuderias/:ID', 'PUT', 'EscuderiasApiController', 'editEscuderia');
