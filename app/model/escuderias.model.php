@@ -36,7 +36,7 @@ class EscuderiasModel {
     }
 
     function get($id){
-        $query = $this->db->prepare('SELECT * FROM pilotos WHERE id = ?');
+        $query = $this->db->prepare('SELECT * FROM escuderias WHERE id = ?');
         $query->execute([$id]);
         $escuderia = $query->fetch(PDO::FETCH_OBJ);
 

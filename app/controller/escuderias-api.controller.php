@@ -26,12 +26,7 @@
         function getAll(){
             $escuderias = $this->model->getAll();
             $this->view->response($escuderias, 201);
-        }
 
-        
-        // alumno  A llama y ordena el listado
-        function get($params = null){
-            $params = [':ID'];
             // Campos de la tabla
             $fields = array('id', 'equipos', 'description', 'puntos_equipo', 'pos_equipos');
             // Tipos de orden
@@ -47,23 +42,6 @@
             $field = null;
             $value = null;
 
-            // Miembro b: Obtener un elemento (piloto) por ID
-            if(empty($id)){
-                $escuderias = $this->model->getAll($limit, $offset, $sort, $order);
-                return $this->view->response($escuderias,200);
-
-            } else {
-                $escuderia = $this->model->get($id);
-                if(!empty($escuderia)){
-                    return $this->view->response($escuderia, 200);
-                }
-
-                $escuderias = null;
-            
-                
-                $this->view->response("El escuderias con el id = $params no existe en el catalogo", 404);
-            }
-
             //Miembro b: filtrado
             if ((isset($_GET['field'])&& isset($_GET['value']))){
                 $value = $_GET['value'];
@@ -74,6 +52,7 @@
                 return $this->view->response("$field no es un campo existente de la tabla", 400);
             }
 
+            // alumno  A llama y ordena el listado
             //Ordenado por un campo asc o desc Alumno A
             if ((isset($_GET['sort'])&&isset($_GET['order']))){
                 // Verifica que lo que se haya recibido por parametro GET pertenezca al array de opciones posibles
@@ -101,7 +80,23 @@
                         return $this->view->response("El limite debe ser menor a $total", 400);
                 }
             }
-    }
+        }
+
+        
+        
+        // Miembro b: Obtener un elemento (escuderia) por ID
+        function get($params = null){
+            $id = $params [':ID'];
+            $escuderia = $this->model->get($id);
+            
+            if($escuderia){
+                $this->view->response($escuderia);
+            } else {
+                $this->view->response("El escuderias con el id = $id no existe en el catalogo", 404);
+            } 
+        }
+
+    
         //Miembro b: POST, insertar o crear un elemento (piloto)
         function insertEscuderia($params = null){
             if(!$this->authHelper->isLoggedIn()){
