@@ -1,4 +1,5 @@
 <?php
+require_once 'config.php';
 
 class UserModel {
     private $db;
@@ -8,7 +9,7 @@ class UserModel {
     }
 
     private function getDB() {
-        $db = new PDO('mysql:host=localhost;'.'dbname=db_tpe;charset=utf8', 'root', '');
+        $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME .';charset='.DB_Charset,DB_USER,DB_PASS );
         return $db;
     }
     
