@@ -1,7 +1,5 @@
 <?php
-
     require_once 'app/model/escuderias.model.php';
-
     require_once 'app/view/api.view.php';
     require_once 'app/helpers/auth-api.helper.php';
     
@@ -123,7 +121,7 @@
     
 
         // se realiza la funcion de borrar un item
-        function deleteEscuderias($params = null){
+        function deleteEscuderia($params = null){
             if(!$this->authHelper->isLoggedIn()){
                 $this->view->response("No estas logeado", 401);
                 return;

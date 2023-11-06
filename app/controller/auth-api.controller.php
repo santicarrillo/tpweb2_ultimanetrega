@@ -1,7 +1,7 @@
 <?php
-require_once './app/models/user.model.php';
-require_once './app/views/api.view.php';
-require_once './app/helpers/auth-api.helper.php';
+require_once 'app/model/user.model.php';
+require_once 'app/view/api.view.php';
+require_once 'app/helpers/auth-api.helper.php';
 
 
 class AuthApiController {
