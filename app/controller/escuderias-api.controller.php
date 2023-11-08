@@ -80,6 +80,22 @@
                         return $this->view->response("El limite debe ser menor a $total", 400);
                 }
             }
+
+            //Miembro B: Hago los llamados al modelo, en caso de que no haya entrado a los if anteriores, van los valores por defecto
+            if ($field!=null&&$value!=null)
+                if($field=='puntos_equipo')
+                    $escuderias = $this->model->getAllFilterPuntos($field, $value, $limit, $offset, $sort, $order);
+                else
+                    $escuderias = $this->model->getAllFilter($field, $value, $limit, $offset, $sort, $order);
+            else 
+                $escuderias = $this->model->getAll($limit, $offset, $sort, $order);
+            
+            //Hago el llamado a la vista
+            if ($escuderias)
+                return $this->view->response($escuderias);
+            else 
+                return $this->view->response("No hay escuderias disponibles", 404);
+        
         }
 
         

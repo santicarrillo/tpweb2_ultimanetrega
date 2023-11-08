@@ -16,6 +16,17 @@ class EscuderiasModel {
         $total = $query->fetchColumn();
         return $total;
     }
+
+    //Orden, paginacion y filtro 
+    function getAllFilterPuntos($field, $value, $limit, $offset, $sort, $order){
+        $query = $this->db->prepare("SELECT * FROM escuderias WHERE $field <= ?  ORDER BY $sort $order LIMIT $offset, $limit");
+        $query->execute([$value]);
+        
+        $escuderias = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de productos
+        
+        return $escuderias;
+    }
+
     //filtro
     function getAllFilter($field, $value, $limit, $offset, $sort, $order){
         $query = $this->db->prepare("SELECT * FROM escuderias WHERE $field = $value ORDER BY $sort $order LIMIT $offset, $limit");
@@ -24,7 +35,8 @@ class EscuderiasModel {
         $escuderias = $query->fetchAll(PDO::FETCH_OBJ); 
 
         return $escuderias;
-        }
+    }
+
     //Orden y paginacion
     function getAll(){
         $query = $this->db->prepare("SELECT * FROM escuderias");
