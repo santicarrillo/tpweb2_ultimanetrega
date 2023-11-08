@@ -51,12 +51,12 @@ class EscuderiasModel {
     }
 
     function delete($id){
-        $query = $this->db->prepare('DELETE FROM escuderia WHERE id = ?');
+        $query = $this->db->prepare('DELETE FROM escuderias WHERE id = ?');
         $query->execute([$id]);
     }
     
     function edit($id, $equipos, $description , $puntos_equipo, $pos_equipos){
-        $query = $this->db->prepare('UPDATE `escuderia` SET nombre= ? , campeonato = ?, puntos = ?, id_escuderia = ? WHERE id = ?');
+        $query = $this->db->prepare('UPDATE `escuderias` SET nombre= ? , campeonato = ?, puntos = ?, id_escuderia = ? WHERE id = ?');
         $query->execute([$id, $equipos, $description , $puntos_equipo, $pos_equipos]);
         return $this->db->lastInsertId();
     }
