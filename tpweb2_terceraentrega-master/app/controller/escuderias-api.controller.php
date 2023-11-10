@@ -13,7 +13,7 @@
         public function __construct(){
             $this->model = new EscuderiasModel();
             $this->view = new ApiView();
-            $this->authHelper = new AuthApiHelper();
+            $this->authHelper = new AuthHelper();
             
             //lee el body del request
             $this->data = file_get_contents("php://input");
@@ -115,10 +115,18 @@
     
         //Miembro b: POST, insertar o crear un elemento (piloto)
         function insertEscuderia($params = null){
-            if(!$this->authHelper->isLoggedIn()){
-                $this->view->response("No esta logeado", 401);
+            $user = $this->authHelper->currentUser();
+            if(!$user) {
+                $this->view->response('Unauthorized', 401);
                 return;
             }
+
+            if($user->role!='ADMIN') {
+                $this->view->response('Forbidden', 403);
+                return;
+            }
+
+
             $escuderia = $this->getData();
 
             if (empty($escuderia->equipos)||empty($escuderia->description)||empty($escuderia->puntos_equipo)||empty($escuderia->pos_equipos)){
@@ -133,10 +141,18 @@
 
         // se realiza la funcion de borrar un item
         function deleteEscuderia($params = null){
-            if(!$this->authHelper->isLoggedIn()){
-                $this->view->response("No estas logeado", 401);
+            $user = $this->authHelper->currentUser();
+            if(!$user) {
+                $this->view->response('Unauthorized', 401);
                 return;
             }
+
+            if($user->role!='ADMIN') {
+                $this->view->response('Forbidden', 403);
+                return;
+            }
+
+
 
             $id = $params[':ID'];
             $escuderia = $this->model->get($id);
@@ -150,10 +166,18 @@
         }
 
         function editEscuderia($params = null){
-            if(!$this->authHelper->isLoggedIn()){
-                    $this->view->response("No estas logeado", 401);
-                    return;
-                }
+            $user = $this->authHelper->currentUser();
+            if(!$user) {
+                $this->view->response('Unauthorized', 401);
+                return;
+            }
+
+            if($user->role!='ADMIN') {
+                $this->view->response('Forbidden', 403);
+                return;
+            }
+
+
             $id = $params[':ID'];
             $escuderias = $this->model->get($id);
             if($escuderias){

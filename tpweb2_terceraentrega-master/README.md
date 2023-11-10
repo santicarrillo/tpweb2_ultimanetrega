@@ -139,3 +139,4 @@ El usuario que consume la api tiene libertad de ver todos los registros, de mane
 Estos datos deben coincidir con los registros de la base de datos en la tabla *usuarios*, si estos datos son erroneos o estan incompletos se produce un error `401 Not Found Unauthorized`.  
 
 Si la autenticacion es correcta, devuelve un *token*, el cual a traves del endopoint `PUT /escuderias/:ID` O `POST /escuderias` se utiliza en la autorizacion de tipo **Bearer Token** y si es correcto el token, se ejecuta el PUT o POST.
+>>>>>>> origin/master

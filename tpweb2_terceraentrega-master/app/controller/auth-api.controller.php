@@ -1,69 +1,50 @@
 <?php
-require_once 'app/model/user.model.php';
-require_once 'app/view/api.view.php';
-require_once 'app/helpers/auth-api.helper.php';
+    require_once 'app/controller/escuderias-api.controller.php';
+    require_once 'app/helpers/auth-api.helper.php';
+    require_once 'app/model/user.model.php';
 
+    class UserApiController extends EscuderiasApiController {
+        private $model;
+        private $view;
+        private $authHelper;
 
-class AuthApiController {
-    private $model;
-    private $view;
-    private $authHelper;
-
-    private $data;
-
-    public function __construct() {
-        $this->model = new UserModel();
-        $this->view = new ApiView();
-        $this->authHelper = new AuthApiHelper();
-        
-        // lee el body del request
-        $this->data = file_get_contents("php://input");
-    }
-    
-    /*function base64url_encode($data) {
-        return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
-    }*/
-
-    public function getToken($params = null) {
-        // Obtener "Basic base64(user:pass)
-        $basic = $this->authHelper->getAuthHeader();
-        
-        if(empty($basic)){
-            $this->view->response('No autorizado', 401);
-            return;
-        }
-        $basic = explode(" ", $basic); // ["Basic" "base64(user:pass)"]
-        if($basic[0]!="Basic"){
-            $this->view->response('La autenticación debe ser Basic', 401);
-            return;
+        function __construct() {
+            parent::__construct();
+            $this->model = new UserModel();
+            $this->view = new ApiView();
+            $this->authHelper = new AuthHelper();
         }
 
-        //validar usuario:contraseña
-        $userpass = base64_decode($basic[1]); // user:pass
-        $userpass = explode(":", $userpass);
-        $user = $userpass[0];
-        $pass = $userpass[1];
-        $userDB =$this->model->getUserByEmail($user);
-        if($userDB && password_verify($pass, $userDB->password)){
-            //  crear un token
-            $header = array(
-                'alg' => 'HS256',
-                'typ' => 'JWT'
-            );
-            $payload = array(
-                'id' => $userDB->id,
-                'name' => $userDB->email,
-                'exp' => time()+120
-            );
-            $header = $this->authHelper->base64url_encode(json_encode($header));
-            $payload = $this->authHelper->base64url_encode(json_encode($payload));
-            $signature = hash_hmac('SHA256', "$header.$payload", "Clave1234", true);
-            $signature = $this->authHelper->base64url_encode($signature);
-            $token = "$header.$payload.$signature";
-            $this->view->response($token);
-        }else{
-            $this->view->response('No autorizado', 401);
+        function getToken($params = []) {
+            $basic = $this->authHelper->getAuthHeaders(); // Darnos el header 'Authorization:' 'Basic: base64(usr:pass)'
+
+            if(empty($basic)) {
+                $this->view->response('No envió encabezados de autenticación.', 401);
+                return;
+            }
+
+            $basic = explode(" ", $basic); // ["Basic", "base64(usr:pass)"]
+
+            if($basic[0]!="Basic") {
+                $this->view->response('Los encabezados de autenticación son incorrectos.', 401);
+                return;
+            }
+
+            $userpass = base64_decode($basic[1]); // usr:pass
+            $userpass = explode(":", $userpass); // ["usr", "pass"]
+
+            $user = $userpass[0];
+            $pass = $userpass[1];
+
+            $userdata = [ "name" => $user, "id" => 123, "role" => 'ADMIN' ]; // Llamar a la DB
+
+            if($user == "webadmin@gmail.com" && $pass == "2003") {
+                // Usuario es válido
+                
+                $token = $this->authHelper->createToken($userdata);
+                $this->view->response($token);
+            } else {
+                $this->view->response('El usuario o contraseña son incorrectos.', 401);
+            }
         }
     }
-
-}

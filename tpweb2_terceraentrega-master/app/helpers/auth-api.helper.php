@@ -1,48 +1,72 @@
 <?php
-
-class AuthApiHelper {
+    require_once 'app/model/config.php';
 
     function base64url_encode($data) {
         return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
     }
-    
-    function getToken(){
-        $auth = $this->getAuthHeader(); // Bearer header.payload.signature
-        $auth = explode(" ", $auth);
-        if($auth[0]!="Bearer" || count($auth) != 2){
-            return array();
+
+    class AuthHelper {
+        function getAuthHeaders() {
+            $header = "";
+            if(isset($_SERVER['HTTP_AUTHORIZATION']))
+                $header = $_SERVER['HTTP_AUTHORIZATION'];
+            if(isset($_SERVER['REDIRECT_HTTP_AUTHORIZATION']))
+                $header = $_SERVER['REDIRECT_HTTP_AUTHORIZATION'];
+            return $header;
         }
-        $token = explode(".", $auth[1]);
-        $header = $token[0];
-        $payload = $token[1];
-        $signature = $token[2];
 
-        $new_signature = hash_hmac('SHA256', "$header.$payload", "Clave1234", true);
-        $new_signature = $this->base64url_encode($new_signature);
-        if($signature!=$new_signature)
-            return array();
+        function createToken($payload) {
+            $header = array(
+                'alg' => 'HS256',
+                'typ' => 'JWT'
+            );
+            
+            $payload['exp'] = time() + JWT_EXP;
 
-        $payload = json_decode(base64_decode($payload));
-        if(!isset($payload->exp) || $payload->exp<time())
-            return array();
-        
-        return $payload;
+            $header = base64url_encode(json_encode($header));
+            $payload = base64url_encode(json_encode($payload));
+            
+            $signature = hash_hmac('SHA256', "$header.$payload", JWT_KEY, true);
+            $signature = base64url_encode($signature);
+
+            $token = "$header.$payload.$signature";
+            
+            return $token;
+        }
+
+        function verify($token) {
+            // $header.$payload.$signature
+
+            $token = explode(".", $token); // [$header, $payload, $signature]
+            $header = $token[0];
+            $payload = $token[1];
+            $signature = $token[2];
+
+            $new_signature = hash_hmac('SHA256', "$header.$payload", JWT_KEY, true);
+            $new_signature = base64url_encode($new_signature);
+
+            if($signature!=$new_signature) {
+                return false;
+            }
+
+            $payload = json_decode(base64_decode($payload));
+
+            if($payload->exp<time()) {
+                return false;
+            }
+
+            return $payload;
+        }
+      
+    
+        function currentUser() {
+            $auth = $this->getAuthHeaders(); // "Bearer $token"
+            $auth = explode(" ", $auth); // ["Bearer", "$token"]
+
+            if($auth[0] != "Bearer") {
+                return false;
+            }
+
+            return $this->verify($auth[1]); // Si está bien nos devuelve el payload
+        }
     }
-
-    function isLoggedIn(){
-        $payload = $this->getToken();
-        if(isset($payload->id))
-            return true;
-        else
-            return false;
-    }
-
-    function getAuthHeader(){
-        $header = "";
-        if(isset($_SERVER['HTTP_AUTHORIZATION']))
-            $header = $_SERVER['HTTP_AUTHORIZATION'];
-        if(isset($_SERVER['REDIRECT_HTTP_AUTHORIZATION']))
-            $header = $_SERVER['REDIRECT_HTTP_AUTHORIZATION'];
-        return $header;
-    }
-}

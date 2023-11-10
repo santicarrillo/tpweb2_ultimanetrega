@@ -1,5 +1,5 @@
 <?php
-
+require_once 'app/model/config.php';
 class EscuderiasModel {
     
     private $db;
