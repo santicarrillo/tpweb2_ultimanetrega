@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# tp-web2_repository
-=======
 # Formula 1 API
 
 Endpoint de la API : **http://localhost/TPe-webII-parte3/api/escuderias**
