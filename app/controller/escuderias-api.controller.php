@@ -115,7 +115,7 @@
     
         //Miembro b: POST, insertar o crear un elemento (piloto)
         function insertEscuderia($params = null){
-            $user = $this->authHelper->currentUser();
+            /*$user = $this->authHelper->currentUser();
             if(!$user) {
                 $this->view->response('Unauthorized', 401);
                 return;
@@ -124,7 +124,7 @@
             if($user->role!='ADMIN') {
                 $this->view->response('Forbidden', 403);
                 return;
-            }
+            }*/
 
 
             $escuderia = $this->getData();
@@ -141,7 +141,7 @@
 
         // se realiza la funcion de borrar un item
         function deleteEscuderia($params = null){
-            $user = $this->authHelper->currentUser();
+            /*$user = $this->authHelper->currentUser();
             if(!$user) {
                 $this->view->response('Unauthorized', 401);
                 return;
@@ -150,7 +150,7 @@
             if($user->role!='ADMIN') {
                 $this->view->response('Forbidden', 403);
                 return;
-            }
+            }*/
 
 
 
@@ -166,7 +166,7 @@
         }
 
         function editEscuderia($params = null){
-            $user = $this->authHelper->currentUser();
+            /*$user = $this->authHelper->currentUser();
             if(!$user) {
                 $this->view->response('Unauthorized', 401);
                 return;
@@ -175,7 +175,7 @@
             if($user->role!='ADMIN') {
                 $this->view->response('Forbidden', 403);
                 return;
-            }
+            }*/
 
 
             $id = $params[':ID'];
