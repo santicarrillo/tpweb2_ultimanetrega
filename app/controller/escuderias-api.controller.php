@@ -115,7 +115,7 @@
     
         //Miembro b: POST, insertar o crear un elemento (piloto)
         function insertEscuderia($params = null){
-            $user = $this->authHelper->currentUser();
+          /*  $user = $this->authHelper->currentUser();
             if(!$user) {
                 $this->view->response('Unauthorized', 401);
                 return;
@@ -124,16 +124,15 @@
             if($user->role!='ADMIN') {
                 $this->view->response('Forbidden', 403);
                 return;
-            }
+            }*/
 
 
-            $escuderia = $this->getData();
-
-            if (empty($escuderia->equipos)||empty($escuderia->description)||empty($escuderia->puntos_equipo)||empty($escuderia->pos_equipos)){
-                $this->view->response("Complete los datos", 400);
+            $escuderias = $this->getData();
+            if (!empty($escuderias->equipos) && !empty($escuderias->puntos_equipo)&&!empty($escuderias->pos_equipos)){
+                 $id = $this->model->insert($escuderias->equipos, $escuderias->puntos_equipo, $escuderias->pos_equipos);
+                $this->view->response($escuderias, 201);
             } else {
-                $id = $this->model->insert($escuderia->equipos, $escuderia->description, $escuderia->puntos_equipo, $escuderia->pos_equipos);
-                $this->view->response($escuderia, 201);
+                $this->view->response("Complete los datos", 400);
             }
         
         }
@@ -141,7 +140,7 @@
 
         // se realiza la funcion de borrar un item
         function deleteEscuderia($params = null){
-            $user = $this->authHelper->currentUser();
+            /*$user = $this->authHelper->currentUser();
             if(!$user) {
                 $this->view->response('Unauthorized', 401);
                 return;
@@ -150,7 +149,7 @@
             if($user->role!='ADMIN') {
                 $this->view->response('Forbidden', 403);
                 return;
-            }
+            }*/
 
 
 
@@ -166,7 +165,7 @@
         }
 
         function editEscuderia($params = null){
-            $user = $this->authHelper->currentUser();
+           /* $user = $this->authHelper->currentUser();
             if(!$user) {
                 $this->view->response('Unauthorized', 401);
                 return;
@@ -175,13 +174,13 @@
             if($user->role!='ADMIN') {
                 $this->view->response('Forbidden', 403);
                 return;
-            }
-
-
+            }*/
+        
             $id = $params[':ID'];
             $escuderias = $this->model->get($id);
             if($escuderias){
-                $escuderias = $this->getData();
+                $escuderiasData = $this->getData();
+                var_dump($escuderiasData);
                 if (empty($escuderias->equipos)||empty($escuderias->description)||empty($escuderias->puntos_equipo)||empty($escuderias->pos_equipos)){
                     $this->view->response("Complete los datos", 400);
                 } else {                

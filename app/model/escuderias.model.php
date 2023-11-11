@@ -55,9 +55,9 @@ class EscuderiasModel {
         return $escuderia;
     }
 
-    function insert($equipos, $description , $puntos_equipo, $pos_equipos){
-        $query = $this->db->prepare("INSERT INTO escuderias (equipos, description, puntos_equipo, pos_equipos) VALUE (?, ?, ?, ?)");
-        $query->execute([$equipos, $description , $puntos_equipo, $pos_equipos]);
+    function insert($equipos, $puntos_equipo, $pos_equipos){
+        $query = $this->db->prepare("INSERT INTO escuderias (equipos, puntos_equipo, pos_equipos) VALUE (?, ?, ?)");
+        $query->execute([$equipos , $puntos_equipo, $pos_equipos]);
 
         return $this->db->lastInsertId();
     }
