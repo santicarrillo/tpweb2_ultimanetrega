@@ -107,7 +107,7 @@
             if($escuderia){
                 $this->view->response($escuderia);
             } else {
-                $this->view->response("El escuderias con el id = $id no existe en el catalogo", 404);
+                $this->view->response("La escuderia con el id = $id no existe en el catalogo", 404);
             } 
         }
 
@@ -134,10 +134,10 @@
     
         // Se realiza la funcion de borrar un item
         function deleteEscuderia($params = null){
-            if(!$this->authHelper->isLoggedIn()){
+            /*if(!$this->authHelper->isLoggedIn()){
                 $this->view->response("No estas logeado", 401);
                 return;
-            }
+            }*/
 
             $id = $params[':ID'];
             $escuderia = $this->model->get($id);
@@ -146,17 +146,18 @@
                 $this->view->response("Elemento con el id = $id eliminado con exito", 200);
 
             } else{
-                $this->view->response("la escuderia con el id = $id no existe", 404);
+                $this->view->response("La escuderia con el id = $id no existe", 404);
             }
         }
 
 
         //Miembro A: PUT, editar un elemento 
         function editEscuderia($params = null){
-            if(!$this->authHelper->isLoggedIn()){
+            /*if(!$this->authHelper->isLoggedIn()){
                     $this->view->response("No estas logeado", 401);
                     return;
-                }
+                }*/
+
             $id = $params[':ID'];
             $escuderias = $this->model->get($id);
             if($escuderias){
@@ -169,7 +170,7 @@
                     $this->view->response($escuderias, 201);
                 }
             } else {
-                $this->view->response("El producto con con id = $id no existe en el catalogo", 404);
+                $this->view->response("La escuderia con con id = $id no existe en el catalogo", 404);
             }
        }
 
