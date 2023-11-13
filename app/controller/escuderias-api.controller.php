@@ -170,7 +170,7 @@
                     $this->view->response($escuderias, 201);
                 }
             } else {
-                $this->view->response("La escuderia con con id = $id no existe en el catalogo", 404);
+                $this->view->response("La escuderia con id = $id no existe en el catalogo", 404);
             }
        }
 
