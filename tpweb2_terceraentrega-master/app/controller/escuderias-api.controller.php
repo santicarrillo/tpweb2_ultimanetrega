@@ -115,7 +115,11 @@
     
         //Miembro b: POST, insertar o crear un elemento (piloto)
         function insertEscuderia($params = null){
+<<<<<<< HEAD
             /*$user = $this->authHelper->currentUser();
+=======
+          /*  $user = $this->authHelper->currentUser();
+>>>>>>> d2e36131161cf11984361bff6c66fcff9c6a46bd
             if(!$user) {
                 $this->view->response('Unauthorized', 401);
                 return;
@@ -165,7 +169,11 @@
         }
 
         function editEscuderia($params = null){
+<<<<<<< HEAD
+            /*$user = $this->authHelper->currentUser();
+=======
            /* $user = $this->authHelper->currentUser();
+>>>>>>> d2e36131161cf11984361bff6c66fcff9c6a46bd
             if(!$user) {
                 $this->view->response('Unauthorized', 401);
                 return;
@@ -175,9 +183,12 @@
                 $this->view->response('Forbidden', 403);
                 return;
             }*/
+<<<<<<< HEAD
 
 
+=======
         
+>>>>>>> d2e36131161cf11984361bff6c66fcff9c6a46bd
             $id = $params[':ID'];
             $escuderias = $this->model->get($id);
             if($escuderias){
